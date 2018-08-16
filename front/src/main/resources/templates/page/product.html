@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta chrset="utf-8" />
+    <title>逵坤建筑-工程案例</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- layout文件路径-->
+    <div th:include="common/layout::css" th:remove="tag"></div>
+    <div th:include="common/layout::js" th:remove="tag"></div>
+    <link rel="stylesheet" th:href="@{~/pub/css/site.css}">
+    <link rel="stylesheet" th:href="@{~/pub/css/directionReveal.css}">
+    <script>
+        $(function(){
+            $(".product-tab ul li").click(function(){
+                var index=$(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.case-content .direction-reveal').removeClass('display');
+                $('.case-content .direction-reveal').eq(index).addClass('display');
+            });
+            var obj = new zoom('mask', 'bigimg','smallimg');
+            obj.init();
+        });
+    </script>
+
+</head>
+<body>
+<div th:include="common/layout::nav" th:remove="tag"></div>
+<img src="" alt="" class="bigimg">
+<div class="mask"></div>
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 hidden-xs">
+                <div class="product-le">
+                    <img th:src="@{~/pub/images/product-le-img.jpg}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-9">
+                <div class="product-rg">
+                    <label class="right-k hidden-xs"></label>
+                    <div class="product-tab">
+                        <ul>
+                            <li class="active">办公楼厂房装修</li>
+                            <li>商业装修工程</li>
+                            <li>餐饮装修工程</li>
+                            <li>酒店装修工程</li>
+                        </ul>
+                    </div>
+                    <div class="case-content">
+                        <div class="col-padding-3">
+                            <!--所有分类-->
+                            <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide display">
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case1.jpg}" class="img-fluid smallimg">
+                                    <h2>天域生态</h2>
+                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
+                                    <h2>巴士项目</h2>
+                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case3.jpg}" class="img-fluid smallimg">
+                                    <h2>苏州项目</h2>
+                                    <p>杨浦区国权北路1688号 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case4.jpg}" class="img-fluid smallimg">
+                                    <h2>光谷项目</h2>
+                                    <p>杨浦区国权北路1688号湾谷科技园 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case1.jpg}" class="img-fluid smallimg">
+                                    <h2>光谷项目</h2>
+                                    <p>杨浦区国权北路1688号湾谷科技园 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case4.jpg}" class="img-fluid smallimg">
+                                    <h2>天域生态</h2>
+                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                                </a>
+                            </div>
+                            <!--酒店分类-->
+                            <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
+                                    <h2>巴士项目</h2>
+                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case3.jpg}" class="img-fluid smallimg">
+                                    <h2>苏州项目</h2>
+                                    <p>杨浦区国权北路1688号 20000平</p>
+                                </a>
+                            </div>
+                            <!--餐饮分类-->
+                            <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case1.jpg}" class="img-fluid smallimg">
+                                    <h2>光谷项目</h2>
+                                    <p>杨浦区国权北路1688号湾谷科技园 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case4.jpg}" class="img-fluid smallimg">
+                                    <h2>天域生态</h2>
+                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                                </a>
+                            </div>
+                            <!--休闲分类-->
+                            <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
+                                    <h2>巴士项目</h2>
+                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                                </a>
+                                <a href="#" class="direction-reveal__card">
+                                    <img th:src="@{~/pub/images/case/case3.jpg}" class="img-fluid smallimg">
+                                    <h2>苏州项目</h2>
+                                    <p>杨浦区国权北路1688号 20000平</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="common/layout::footer" th:remove="tag"></div>
+<script th:src="@{~/pub/js/bundle.js}"></script>
+<script th:src="@{~/pub/js/zoom.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body th:fragment="pagination">
+
+
+    <div id="page" class="align-mid">
+        <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
+            <a id="prevfirst" href="javascript:;" class="layui-laypage-prev" data-page="2" onclick="lastPage(this)">上一页</a>
+            <!--<a href="javascript:;" data-page="1">1</a>-->
+            <!--<a href="javascript:;" data-page="2">2</a>-->
+            <!--<span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>3</em></span>-->
+            <!--<a href="javascript:;" data-page="4">4</a>-->
+            <!--<a href="javascript:;" data-page="5">5</a>-->
+            <!--<a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="6">6</a>-->
+            <a href="javascript:;" class="layui-laypage-next" data-page="4" onclick="nextPage(this)">下一页</a>
+        </div>
+    </div>
+    <script>
+
+        $(document).ready(function () {
+
+            for(var i=[[${page.totalPages}]];i>0;i--){
+                var item='<a href="javascript:;" data-page="'+i+'">'+i+'</a>';
+                $("#prevfirst").after(item);
+                console.log(i);
+            }
+
+        });
+
+        function lastPage(obj) {
+            if([[${!page.first}]]){
+                $('#searchForm').children("input[name='page']").val([[${page.number-1}]]);
+                $('#searchForm').submit();
+            }
+        }
+        
+        function nextPage(obj) {
+            if([[${!page.last}]]){
+                $('#searchForm').children("input[name='page']").val([[${page.number+1}]]);
+                $('#searchForm').submit();
+            }
+        }
+
+    </script>
+
+</body>
+</html>

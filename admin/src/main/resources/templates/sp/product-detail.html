@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <div th:include="common/office::css" th:remove="tag"></div>
+    <div th:include="common/office::js" th:remove="tag"></div>
+    <script>
+
+
+    </script>
+</head>
+
+<body>
+<form id="submitForm" class="layui-form" th:action="@{~/product/save}" method="post">
+    <div class="layui-">
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="sname" th:value="${product.sname}" lay-verify="title" class="layui-input">
+                <input type="hidden" name="id" th:value="${product.id}"/>
+                <input type="hidden" name="itype" th:value="10"/>
+                <input type="hidden" id="sfileid" name="sfileid"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">省份:</label>
+            <div class="layui-input-block">
+                <input type="text" name="sprovince" th:value="${product.sprovince}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">城市:</label>
+            <div class="layui-input-block">
+                <input type="text" name="scity" th:value="${product.scity}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">地址:</label>
+            <div class="layui-input-block">
+                <input type="text" name="saddress" th:value="${product.saddress}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片:</label>
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+        </div>
+    </div>
+
+
+</form>
+
+<script>
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: '/upload/uploadimg' //上传接口
+            ,done: function(res){
+                if(res.success){
+                    $("#sfileid").val(res.obj.id);
+                    layer.msg("上传成功");
+                }else{
+                    layer.msg("上传失败");
+                    $("#sfileid").val("");
+                }
+            }
+            ,error: function(){
+                layer.msg("上传失败");
+                $("#sfileid").val("");
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

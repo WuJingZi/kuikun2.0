@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta chrset="utf-8" />
+    <title>逵坤建筑-理念</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- layout文件路径-->
+    <div th:include="common/layout::css" th:remove="tag"></div>
+    <div th:include="common/layout::js" th:remove="tag"></div>
+    <link rel="stylesheet" th:href="@{~/pub/css/site.css}">
+    <link rel="stylesheet" th:href="@{~/pub/css/directionReveal.css}">
+    <script>
+        $(function(){
+            $(".product-tab ul li").click(function(){
+                var index=$(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.case-content .idea-list').removeClass('display');
+                $('.case-content .idea-list').eq(index).addClass('display');
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div th:include="common/layout::nav" th:remove="tag"></div>
+<div class="page idea">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-le">
+                    <img th:src="@{~/pub/images/idea-le-img.jpg}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-rg">
+                    <label class="right-k hidden-xs"></label>
+                    <div class="product-tab">
+                        <ul>
+                            <li class="active">领导力</li>
+                            <li>设计要求</li>
+                            <li>项目管理</li>
+                            <li>施工质量管控</li>
+                        </ul>
+                    </div>
+                    <div class="case-content">
+                        <div class="col-padding-3">
+                            <div class="idea-list display">
+                                <p>我们以全方位的方针进行项目运作。从目标到时机，乃至沟通、质量和成本控制，我们通过出色的领导将无缝、整合管理应用到项目的方方面面。</p>
+                                <p>我们积极引导多领域的专业人士建立、开发各类项目技术要求，并将所有相关内容均一并纳入考量。</p>
+                                <p>我们专注于整个项目流程中的协同合作、协调和参与， 以防范潜在的陷阱，降低风险并确保客户满意度。</p>
+                                <p>将变革、健康和空间策略规划有机整合在一起是助力企业成功并持续吸引人才的关键。求知为动力、研究为导向、数据为驱动，我们聆听您的需求并切实了解您所设定的目标和面对的挑战。这亦使我们能够为您打造切合你所需的、可量化的解决方案。
+                                </p>
+                            </div>
+                            <div class="idea-list">
+                                <p>我们以全方位的方针进行项目运作。从目标到时机，乃至沟通、质量和成本控制，我们通过出色的领导将无缝、整合管理应用到项目的方方面面。</p>
+                                <p>我们积极引导多领域的专业人士建立、开发各类项目技术要求，并将所有相关内容均一并纳入考量。</p>
+                                <p>我们专注于整个项目流程中的协同合作、协调和参与， 以防范潜在的陷阱，降低风险并确保客户满意度。</p>
+                            </div>
+                            <div class="idea-list">
+                                <p>我们积极引导多领域的专业人士建立、开发各类项目技术要求，并将所有相关内容均一并纳入考量。</p>
+                                <p>我们专注于整个项目流程中的协同合作、协调和参与， 以防范潜在的陷阱，降低风险并确保客户满意度。</p>
+                            </div>
+                            <div class="idea-list">
+                                <p>我们积极引导多领域的专业人士建立、开发各类项目技术要求，并将所有相关内容均一并纳入考量。</p>
+                                <p>我们专注于整个项目流程中的协同合作、协调和参与， 以防范潜在的陷阱，降低风险并确保客户满意度。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="common/layout::footer" th:remove="tag"></div>
+<script th:src="@{~/pub/js/bundle.js}"></script>
+</body>
+
+</html>

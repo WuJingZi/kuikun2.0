@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta chrset="utf-8" />
+    <title>逵坤建筑-联系我们</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- layout文件路径-->
+    <div th:include="common/layout::css" th:remove="tag"></div>
+    <div th:include="common/layout::js" th:remove="tag"></div>
+</head>
+<body>
+<div th:include="common/layout::nav" th:remove="tag"></div>
+<div class="page about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-le">
+                    <img th:src="@{~/pub/images/contact-le-img.jpg}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-rg">
+                    <label class="right-k hidden-xs"></label>
+                    <div class="contact-part">
+                        <img class="building hidden-xs" th:src="@{~/pub/images/contact-rg-img.jpg}"/>
+                        <p><label>Tel:</label>&nbsp;&nbsp;&nbsp;400-888-8888&nbsp;&nbsp;18616180369</p>
+                        <p><label>Add:</label> 上海市闵行区联航路1505号复地浦江中心1号楼1407单元</p>
+                        <p class="en">Unit 1407,Building 1,No.1505,Lianhang Road,Minhang District,Shanghai</p>
+                        <p><label>Mail:</label> service@KUINK.com.cn</p>
+                        <img class="code" th:src="@{~/pub/images/chat-code.jpg}"/>
+                        <img class="building hidden-lg visible-xs" th:src="@{~/pub/images/contact-rg-img.jpg}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="common/layout::footer" th:remove="tag"></div>
+</body>
+
+</html>

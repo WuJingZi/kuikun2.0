@@ -1,0 +1,542 @@
+.hidden-lg{
+  display: none;
+}
+.carousel .ban-intro {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.carousel .ban-intro .block{
+  width: 32%;
+  background: rgba(255,255,255,0.7);
+  padding: 22px 30px;
+  box-sizing: border-box;
+  color: #333;
+  line-height: 1.8;
+  float: right;
+  color: #666;
+  font-size: 18px;
+}
+.feature{
+  height: 600px;
+  margin-top: 80px;
+}
+.feature .swiper-container {
+  width: 100%;
+  height: 600px;
+  overflow: visible;
+}
+.feature .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+}
+.feature .swiper-slide .cover{
+  position: absolute;
+  top:-60px;
+  left:80px;
+}
+.feature .swiper-slide .cover p{
+  color:#333;
+  font-size: 34px;
+  line-height: 1.4;
+  font-weight: 400;
+  padding:0 20px;
+  letter-spacing: 3px;
+}
+.feature .swiper-slide .cover p.mobile{
+  display: none;
+}
+.feature .swiper-slide label{
+  display: none;
+}
+.feature .swiper-slide .cover p.white-bg{
+  width:460px;
+  padding: 10px 20px;
+  background: #fff;
+  position: relative;
+}
+.feature .swiper-slide .cover p.white-bg span{
+  position: absolute;
+  right: 20px;
+  color:#999;
+  font-size: 16px;
+  top:26px;
+}
+.thinkings{
+  margin-top: 80px;
+}
+.thinkings .think-con{
+  width:100%;
+  padding-left: 40px;
+  box-sizing: border-box;
+  position: relative;
+}
+.thinkings .think-con label.left-k{
+  position: absolute;
+  top:0;
+  left:0;
+  width:10px;
+  bottom: 30px;
+  background: #987a61;
+}
+.thinkings .think-con img{
+  width: 100%;
+}
+.thinkings .think-con .think-img-lg img{
+  height:251px;
+}
+.thinkings .think-con .word h2{
+  font-size: 38px;
+  padding: 80px 0 10px 0;
+  color:#333;
+  font-weight: 300;
+  text-align: center;
+}
+.thinkings .think-con .word p{
+  color:#89705a;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+}
+.thinkings .think-con .think-img h2{
+  font-size: 18px;
+  padding:10px 0 5px 0;
+  color:#89705a;
+  margin: 0;
+  font-weight: 400;
+}
+.thinkings .think-con .think-img p{
+  color:#333;
+  font-size: 14px;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+/*footer开始*/
+.footer{
+  background: #fff;
+  padding: 20px 0 10px 0;
+}
+.footer .footer-infor p{
+  color:#333333;
+  font-size: 14px;
+  display: inline-block;
+  margin-right: 50px;
+}
+.footer .footer-infor p.copyright{
+  margin-right: 153px;
+}
+.footer .copy-link ul{
+  padding-left: 30px;
+  text-align: left;
+}
+.footer .copy-link ul li{
+  display: inline-block;
+  margin-right: 10px;
+  color:#aaaaaa;
+  font-weight:300;
+}
+.footer .copy-link ul li a{
+  font-size: 14px;
+  color:#aaaaaa;
+  font-weight: 300;
+}
+/*footer结束*/
+.m-intro{
+  display: none;
+}
+/*案例开始*/
+.page{
+  margin-bottom: 50px;
+}
+.product-le{
+  padding:20px 12px 0 0;
+}
+.product-le img{
+  width: 100%;
+}
+.product-rg{
+  position: relative;
+  padding-right: 80px;
+}
+.product-rg label.right-k{
+  position: absolute;
+  top:30px;
+  right:0;
+  width:10px;
+  bottom: 0;
+  background: #987a61;
+  min-height: 460px;
+}
+.navbar-child{
+  position: relative;
+  margin-top: 15px;
+}
+.case-content{
+  margin-bottom: 50px;
+}
+.product-tab{
+  padding: 20px 0;
+  position: relative;
+  overflow: auto;
+  z-index: 10;
+  background: #fff;
+}
+.product-tab ul {
+  white-space: nowrap;
+}
+.product-tab ul li {
+  display: inline-block;
+  color: #999;
+  padding: 5px 0;
+  cursor: pointer;
+  font-weight: 400;
+  background: #aaaaaa;
+  color: #fff;
+  font-size: 16px;
+  min-width: 136px;
+  text-align: center;
+}
+.product-tab ul li.active{
+  background: #333333;
+}
+.case-content .case-list .case-item{
+  border-bottom: none;
+  display: block;
+  float: left;
+  width: 32.666666%;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 1%;
+}
+.case-content .case-list .case-item:nth-child(2n) {
+  margin-left: 1%;
+}
+.case-content .case-list .case-item:nth-child(3n) {
+  margin-left: 1%;
+}
+.case-content .case-list .case-item:nth-child(4n) {
+  margin-left: 0;
+}
+.case-content .case-list .case-item .case-img{
+  width: 100%;
+}
+.case-content .case-list .case-item .case-img img{
+  width: 100%;
+}
+.direction-reveal{
+  display: none;
+}
+.direction-reveal.display{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.direction-reveal__card h2{
+  color: #333;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+.direction-reveal__card p{
+  color: #999;
+  font-size: 14px;
+}
+/*服务*/
+.serve-list{
+  padding-left: 20px;
+}
+.serve-list h2{
+  font-size: 18px;
+  color:#333;
+  margin: 15px 0 20px 0;
+}
+.serve-list p{
+  font-size: 15px;
+  color: #333;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+/*理念*/
+.idea-list{
+  display: none;
+}
+.idea-list.display{
+  display: block;
+}
+.idea-list p{
+  color:#333;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+.idea .product-rg label.right-k{
+  top:30px;
+  min-height: 460px;
+}
+.about-word{
+  margin-top: 15px;
+}
+.about-word p{
+  color: #333;
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+.about .product-rg label.right-k{
+  top:0;
+}
+.contact-part img.building{
+  width: 60%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.contact-part p{
+  color: #333;
+  font-size: 18px;
+  padding-right: 12%;
+}
+.contact-part p.en{
+  padding-left: 45px;
+}
+.contact-part p label{
+  font-weight: normal;
+}
+.contact-part img.code{
+  padding-left: 45px;
+}
+.bigimg{width:60%!important;height:55%!important;position: fixed;left: 0;top: 0; right: 0;bottom: 0;margin:auto;display: none;z-index:9999;border: 10px solid #fff;}
+.mask{position: fixed;left: 0;top: 0; right: 0;bottom: 0;background-color: #000;opacity:0.5;filter: Alpha(opacity=50);z-index: 98;transition:all 1s;display: none}
+.imgbox:hover{cursor:zoom-in}
+.mask:hover{cursor:zoom-out}
+.mask>img{position: fixed;right:10px;top: 10px;width: 60px;}
+.mask>img:hover{cursor:pointer}
+@media (min-width: 1420px){
+  .container{
+    max-width: 94%;
+  }
+}
+@media (min-width: 1800px){
+  .thinkings .think-con .word h2{
+    padding: 120px 0 10px 0;
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 1399px){
+
+}
+
+
+@media screen and (max-width: 1100px){
+
+}
+
+@media screen and (max-width: 1024px){
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .visible-xs{
+    display: block;
+  }
+  #main-slide .carousel-item img{
+    height:50vh;
+  }
+  .carousel .ban-intro{
+    display: none;
+  }
+  #main-slide .carousel-indicators{
+    opacity: 1;
+    bottom: 10px;
+  }
+  /*kuink简介*/
+  .m-intro{
+    display: block;
+    margin-top: 30px;
+    position: relative;
+    padding-bottom: 30px;
+  }
+  .m-intro h2{
+    text-align: center;
+    color:#987a61;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  .m-intro p{
+    text-align: center;
+    font-size: 16px;
+    color:#000;
+    padding:0 30px;
+  }
+  .m-intro label{
+    width:120px;
+    height:1px;
+    background: #987a61;
+    position: absolute;
+  }
+  .m-intro label.top{
+    top:40px;
+    left:0;
+  }
+  .m-intro label.bottom{
+    bottom:0;
+    right:0;
+  }
+  /*feature开始*/
+  .hidden-xs{
+    display: none;
+  }
+  .feature{
+    height: 300px;
+    margin-top: 30px;
+  }
+  .feature .swiper-container{
+    height:300px;
+  }
+  .feature .swiper-slide .cover {
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    top:inherit;
+    background: rgba(152,122,97,0.4);
+    padding: 10px 2px;
+  }
+  .feature .swiper-slide .cover p{
+    display: none;
+  }
+  .feature .swiper-slide .cover p.mobile{
+    font-size: 20px;
+    color: #fff;
+    display: block;
+  }
+  .feature .swiper-slide label{
+    position: absolute;
+    display: block;
+    text-align: center;
+    bottom: -50px;
+    left:0;
+    right:0;
+  }
+  .swiper-button-next, .swiper-button-prev{
+    width: 30px;
+    height: 18px;
+    background-size: 30px 18px;
+    top:115%;
+  }
+  .swiper-button-next.swiper-button-white{
+    background-image: url(../images/m-next.png);
+  }
+  .swiper-button-prev.swiper-button-white{
+    background-image: url(../images/m-prev.png);
+  }
+  /*thinkings开始*/
+  .thinkings .think-con{
+    padding: 0;
+  }
+  .thinkings .think-con .word-tit{
+    display: block;
+  }
+  .thinkings .think-con .word h2{
+    font-weight: normal;
+    font-size: 20px;
+    color:#89705a;
+    padding: 0 0 10px 0;
+    text-align: left;
+    padding-left: 30px;
+    position: relative;
+  }
+  .thinkings .think-con .word h2::before{
+    content: '';
+    position: absolute;
+    left: -15px;
+    width: 40px;
+    height: 1px;
+    background: #987a61;
+    bottom: 21px;
+  }
+  .thinkings .think-con .word p{
+    display: none;
+  }
+  .thinkings .think-con .think-img{
+    position: relative;
+  }
+  .thinkings .think-con .think-img label{
+    position: absolute;
+    display: block;
+    right: -15px;
+    width: 180px;
+    height: 1px;
+    background: #987a61;
+    bottom: 6px;
+  }
+  .thinkings .think-img-slide{
+    display: block;
+    margin-bottom: 60px;
+  }
+  .thinkings .think-img-slide{
+    height: 250px;
+  }
+  .thinkings .think-img-slide .swiper-thinkings{
+    height: 250px;
+    overflow: visible;
+  }
+  .swiper-thinkings .cover{
+    position: absolute;
+    bottom: 0;
+    left: 30px;
+    right: 30px;
+    top: inherit;
+    background: rgba(152,122,97,0.4);
+    padding: 10px 5px;
+  }
+  .swiper-thinkings .cover h2{
+    color:#fff!important;
+  }
+  .swiper-thinkings .cover p{
+    margin-bottom: 0!important;
+  }
+  .m-footer{
+    display: block;
+    background: #e7e7e7;
+    padding: 15px 0;
+    margin-top: 30px;
+  }
+  .m-footer p{
+    text-align: center;
+    font-size: 13px;
+    color:#666;
+  }
+  .product-rg{
+    padding: 0;
+  }
+  .navbar-child{
+    position: fixed;
+    margin-top: 0;
+  }
+  .page {
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  .product-tab ul li {
+    min-width: 110px;
+    padding: 2px 15px;
+    font-size: 12px;
+  }
+  .contact-part{
+    margin-top: 30px;
+  }
+  .contact-part p{
+    padding: 0;
+    font-size: 16px;
+  }
+  .contact-part img.building{
+    width:100%;
+  }
+  .bigimg{
+    width:80%!important;
+    height:35%!important;
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta chrset="utf-8" />
+    <title>逵坤建筑-关于我们</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- layout文件路径-->
+    <div th:include="common/layout::css" th:remove="tag"></div>
+    <div th:include="common/layout::js" th:remove="tag"></div>
+</head>
+<body>
+<div th:include="common/layout::nav" th:remove="tag"></div>
+<div class="page about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-le">
+                    <img th:src="@{~/pub/images/about-le-img.jpg}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-rg">
+                    <label class="right-k hidden-xs"></label>
+                    <div class="about-word">
+                        <p>上海逵坤建筑工程有限公司专业从事室内设计，工程施工，工程总承包管理。公司是在原知名设计公司，工程公司的项目部及团队负责人共同投资组建，致力于为客户提供专业的设计、施工及总承包服务。 </p>
+                        <p>公司的设计团队多次获得国内设计大奖，专注设计服务，涉及住宅、商业、办公、酒店、工业厂房等。公司的工程施工业务主要针对单纯的装修工程
+                            客户，逐步转型传统的施工团队，通过技术培训，安全教育，完善的社会保障和福利，打造技术复合型，年轻化的高级技术工人团队和管理团队。</p>
+                        <p>公司在总承包业务主要为大型工业厂房和企业总部，团队提供从包含项目管理及技术管理的施工总承包的整体服务。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="common/layout::footer" th:remove="tag"></div>
+</body>
+
+</html>

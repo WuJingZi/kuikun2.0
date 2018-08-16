@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+</head>
+<body>
+
+<div th:fragment="css">
+    <link type="image/x-icon" th:href="@{~/pub/images/favicon.ico}" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{~/pub/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{~/pub/css/slicknav.css}"/>
+    <link rel="stylesheet" th:href="@{~/pub/css/animate.css}"/>
+    <link rel="stylesheet" th:href="@{~/pub/css/main.css}"/>
+    <link rel="stylesheet" th:href="@{~/pub/css/page.css}">
+
+</div>
+<div th:fragment="js">
+    <script type="text/javascript" th:src="@{~/pub/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{~/pub/js/page.js}"></script>
+    <script th:src="@{~/pub/js/jquery.nav.js}"></script>
+    <script th:src="@{~/pub/js/jquery.slicknav.js}"></script>
+    <script th:src="@{~/pub/js/main.js}"></script>
+    <script>
+        $(function(){
+            //导航
+            $(".navbar-nav li a").each(function(){
+                $this = $(this);
+                if($this[0].href==String(window.location)){
+                    $this.parent().addClass("active");
+                }
+            });
+        })
+    </script>
+</div>
+
+<div th:fragment="nav">
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar navbar-child">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="icon-menu"></span>
+                    <span class="icon-menu"></span>
+                    <span class="icon-menu"></span>
+                </button>
+                <a href="index.html" class="navbar-brand"><img th:src="@{~/pub/images/logo.png}"/> </a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav mr-auto justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/index}">
+                            首页&nbsp;HOME
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/about}">
+                            关于逵坤&nbsp;ABOUT
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/serve}">
+                            服务领域&nbsp;SERVICE
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/product}">
+                            工程案例&nbsp;PROJECT
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/idea}">
+                            逵坤理念&nbsp;IDEA
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{~/contact}">
+                            联系我们&nbsp;CONTACT
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Start -->
+        <ul class="mobile-menu">
+            <li>
+                <a class="page-scrool" th:href="@{~/index}">首页&nbsp;HOME</a>
+            </li>
+            <li>
+                <a class="page-scrool" th:href="@{~/about}">关于逵坤&nbsp;ABOUT</a>
+            </li>
+            <li>
+                <a class="page-scroll" th:href="@{~/serve}">服务领域&nbsp;SERVICE</a>
+            </li>
+            <li>
+                <a class="page-scroll" th:href="@{~/product}">工程案例&nbsp;PROJECT</a>
+            </li>
+            <li>
+                <a class="page-scroll" th:href="@{~/idea}">逵坤理念&nbsp;IDEA</a>
+            </li>
+            <li>
+                <a class="page-scroll" th:href="@{~/contact}">联系我们&nbsp;CONTACT</a>
+            </li>
+        </ul>
+        <!-- Mobile Menu End -->
+
+    </nav>
+
+</div>
+<div th:fragment="footer">
+    <div class="m-footer hidden-lg">
+        <p>Tel:400-888-8888&nbsp;&nbsp;18616180369</p>
+        <p>© 2018，上海逵坤建筑工程有限公司&nbsp;&nbsp;沪ICP备15043137号</p>
+    </div>
+</div>
+</body>
+
+
+
+
+
+</html>

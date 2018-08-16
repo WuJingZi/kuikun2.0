@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta chrset="utf-8" />
+    <title>逵坤建筑-服务领域</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!-- layout文件路径-->
+    <div th:include="common/layout::css" th:remove="tag"></div>
+    <div th:include="common/layout::js" th:remove="tag"></div>
+</head>
+<body>
+<div th:include="common/layout::nav" th:remove="tag"></div>
+<div class="page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-le">
+                    <img th:src="@{~/pub/images/serve-le-img.jpg}" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-rg">
+                    <label class="right-k hidden-xs"></label>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="serve-list">
+                                <h2>设计</h2>
+                                <p>
+                                    办公空间、写字楼大厦、厂房工程</br>
+                                    办公空间整体设计与规划</br>
+                                    办公空间灯光照明系统设计与工程</br>
+                                    综合强电/弱电系统设计与工程</br>
+                                    暖通/消防/给排水系统设计与工程</br>
+                                    机房、网络系统设计与布线</br>
+                                    办公室家具系统设计与布置</br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="serve-list">
+                                <h2>工程</h2>
+                                <p>
+                                    国际化商业空间设计理念</br>
+                                    银行/酒店/餐厅/咖啡馆/酒吧</br>
+                                    展示厅/售楼处/会所/诊疗医院等商业</br>
+                                    提供商业空间装饰及功能规划设计</br>
+                                    专业灯光照明系统设计</br>
+                                    综合强电/弱电系统设计与工程</br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="serve-list">
+                                <h2>管理</h2>
+                                <p>
+                                    国际化商业空间设计理念</br>
+                                    银行/酒店/餐厅/咖啡馆/酒吧/茶坊</br>
+                                    展示厅/售楼处/会所等商业空间设计</br>
+                                    提供商业空间装饰及功能规划设计</br>
+                                    专业灯光照明系统设计</br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="serve-list">
+                                <h2>其他</h2>
+                                <p>
+                                    银行/酒店/餐厅/咖啡馆/酒吧/</br>
+                                    展示厅/售楼处/会所/诊疗医院等工程</br>
+                                    专业灯光照明系统设计</br>
+                                    综合强电/弱电系统设计与工程</br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="common/layout::footer" th:remove="tag"></div>
+</body>
+
+</html>

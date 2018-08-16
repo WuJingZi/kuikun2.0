@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body th:fragment="msg">
+    <script th:inlie="javascript" th:remove="tag">
+
+        $(document).ready(function () {
+
+            if($('#systemMsg').text()){
+                layer.msg($('#systemMsg').text());
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
