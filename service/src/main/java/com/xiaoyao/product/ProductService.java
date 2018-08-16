@@ -7,11 +7,13 @@ import com.xiaoyao.sys.FileDao;
 import com.xiaoyao.sys.FileService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
+import sys.Log;
 import sys.ServiceException;
 
 @Component
@@ -71,9 +73,18 @@ public class ProductService {
 
 
 	public Page<Product> listPage(int page){
-		return productDao.findAll( PageRequest.of(0, 2, Sort.by(Sort.Order.desc("sname"))));
+		return productDao.findAll( PageRequest.of(page/2, 10, Sort.by(Sort.Order.desc("sname"))));
 	}
 
+
+	public void delete(String id){
+		try {
+			productDao.deleteById(id);
+		}catch (EmptyResultDataAccessException e){
+			Log.info("id为"+id+"记录不存在",this.getClass());
+			throw new ServiceException("记录不存在");
+		}
+	}
 
 
 

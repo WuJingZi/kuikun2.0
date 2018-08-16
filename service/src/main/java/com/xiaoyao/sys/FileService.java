@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 import sys.ServiceException;
 
 import java.util.Date;
+import java.util.List;
 
 @Component
 public class FileService {
@@ -38,5 +39,13 @@ public class FileService {
 
 	public File findOne(String id) {
 		 return fileDao.findById(id).orElse(null);
+	}
+
+	public File findOneByBillid(String sbillid){
+		List<File> files= fileDao.findBySbillid(sbillid);
+		if(files.size()>0) {
+			return files.get(0);
+		}
+		return null;
 	}
 }

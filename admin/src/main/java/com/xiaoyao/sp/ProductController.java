@@ -1,6 +1,9 @@
 package com.xiaoyao.sp;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.xiaoyao.product.ProductService;
+import com.xiaoyao.sys.File;
+import com.xiaoyao.sys.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -8,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import sys.Msg;
 import sys.Result;
 import sys.ServiceException;
 
@@ -20,6 +24,8 @@ public class ProductController {
 
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private FileService fileService;
 
 
 
@@ -34,8 +40,12 @@ public class ProductController {
 	@GetMapping("detail")
 	public String detail (@RequestParam(defaultValue = "") String id, Model model){
 		Product product=productService.findOne(id);
-		if(product==null)
-			product=new Product();
+		if(product==null) {
+			product = new Product();
+		}else{
+			File file=fileService.findOneByBillid(product.getId());
+			model.addAttribute("file",file);
+		}
 		model.addAttribute("product",product);
 		return "sp/product-detail";
 	}
@@ -55,6 +65,21 @@ public class ProductController {
 
 	}
 
+
+    @GetMapping("delete")
+    public String delete (@RequestParam(defaultValue = "") String id, RedirectAttributes rmodel){
+	    try {
+            productService.delete(id);
+            Msg.success(rmodel,"删除成功");
+        }catch (ServiceException e){
+	        e.printStackTrace();
+            Msg.error(rmodel,e.getMessage());
+        }catch (Exception e){
+	        Msg.error(rmodel,"删除失败");
+	        e.printStackTrace();
+        }
+        return "redirect:list";
+    }
 
 
 

@@ -35,13 +35,14 @@ function openSubmit(title,url,width, height) {
                 type:'POST',
                 dataType:'json',
                 success:function(result){
-                if(result.success=='true'){
-                    layer.close(index);
-                }
-                if(result.msg){
-                    layer.msg(result.msg);
-                }
+                    if(result.msg){
+                        layer.msg(result.msg);
+                    }
+
             }});
+        },
+        btn2:function (index,layero) {
+            location.reload();
         }
     });
 }
