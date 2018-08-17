@@ -56,7 +56,16 @@
                 <li class="layui-nav-item" th:classappend="${#strings.equals(param.laythis,'anli')?'layui-nav-itemed':''}">
                     <a href="javascript:;">案例管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a  th:href="@{~/product/list(laythis='anli')}">案例列表</a></dd>
+                        <dd><a  th:href="@{~/product/list(laythis='anli')}">办公楼厂房</a></dd>
+                    </dl>
+                    <dl class="layui-nav-child">
+                        <dd><a  th:href="@{~/product/list(laythis='anli')}">商业装修</a></dd>
+                    </dl>
+                    <dl class="layui-nav-child">
+                        <dd><a  th:href="@{~/product/list(laythis='anli')}">餐饮装修</a></dd>
+                    </dl>
+                    <dl class="layui-nav-child">
+                        <dd><a  th:href="@{~/product/list(laythis='anli')}">酒店装修</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
