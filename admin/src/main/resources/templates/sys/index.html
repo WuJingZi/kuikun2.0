@@ -10,7 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" th:href="@{~/pub/css/admin.css}"/>
-
+    <link type="image/x-icon" th:href="@{~/pub/images/favicon.ico}" rel="shortcut icon">
+    <style>
+        .layui-layout-admin .layui-body{
+            background: #f6f6f6;
+        }
+    </style>
 </head>
     <div layout:fragment="content" class="layui-body layui-tab-content">
 
@@ -22,6 +27,28 @@
                 </div>
                 <p>上海逵坤建筑工程有限公司<label>官网</label></p>
                 <p>网址：<a href="http://xy-studio.cn:5810/index" target="_blank">http://xy-studio.cn:5810/index</a></p>
+                <a class="enter" href="http://xy-studio.cn:5810/index" target="_blank">进入官网</a>
+            </div>
+        </div>
+        <div class="gkDiv">
+            <span class="gk1"></span>
+            <span class="gk2">网站概况</span>
+        </div>
+        <div class="layui-row">
+            <div class="layui-col-xs4">
+                <div class="grid-demo">
+                    <div class="grid-demo-bg1"></div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="grid-demo">
+                    <div class="grid-demo-bg2"></div>
+                </div>
+            </div>
+            <div class="layui-col-xs4">
+                <div class="grid-demo">
+                    <div class="grid-demo-bg3"></div>
+                </div>
             </div>
         </div>
 
