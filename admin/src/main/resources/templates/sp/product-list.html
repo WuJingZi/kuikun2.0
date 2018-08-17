@@ -24,7 +24,10 @@
 </head>
     <div layout:fragment="content" class="layui-body layui-tab-content site-demo site-demo-body">
         <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-            <legend>酒店案例</legend>
+            <legend th:if="${type==10}">办公楼厂房</legend>
+            <legend th:if="${type==20}">商业装修</legend>
+            <legend th:if="${type==30}">餐饮装修</legend>
+            <legend th:if="${type==40}">酒店装修</legend>
         </fieldset>
         <div>
             <form id="searchForm" th:action="@{~/product/list}" method="post">
@@ -54,7 +57,12 @@
                 <tbody>
                 <tr  th:each="obj,stat : ${page}">
                     <td th:text="${obj.sname}"></td>
-                    <td th:text="${obj.itype}"></td>
+                    <td>
+                        <span th:if="${obj.itype==10}">办公楼厂房</span>
+                        <span th:if="${obj.itype==20}">商业装修</span>
+                        <span th:if="${obj.itype==30}">餐饮装修</span>
+                        <span th:if="${obj.itype==40}">酒店装修</span>
+                    </td>
                     <td th:text="${obj.sprofiles}"></td>
                     <td>
 

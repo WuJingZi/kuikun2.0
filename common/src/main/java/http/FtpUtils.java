@@ -22,7 +22,7 @@ public class FtpUtils {
 
 	private static int port=21;
 
-	private static String yunUrl="ftp://xy-studio.cn/pub/kuikun/";
+	private static String yunUrl="http://xy-studio.cn:8080/";
 
 
 	/**
@@ -50,7 +50,7 @@ public class FtpUtils {
 // 设置文件类型（二进制）
 			ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
 			ftpClient.storeFile(fileName, localFileStream);
-			return fileName;
+			return new StringBuffer(yunUrl).append(fileName).toString();
 		} catch(FileNotFoundException e){
 			throw new ServiceException("文件不存在");
 		} catch (IOException e) {
