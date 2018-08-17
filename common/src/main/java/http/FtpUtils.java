@@ -50,7 +50,7 @@ public class FtpUtils {
 // 设置文件类型（二进制）
 			ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
 			ftpClient.storeFile(fileName, localFileStream);
-			return new StringBuffer(yunUrl).append(fileName).toString();
+			return fileName;
 		} catch(FileNotFoundException e){
 			throw new ServiceException("文件不存在");
 		} catch (IOException e) {

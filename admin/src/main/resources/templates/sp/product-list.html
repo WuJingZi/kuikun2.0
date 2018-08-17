@@ -32,7 +32,7 @@
             </form>
         </div>
         <div >
-            <button onclick="openSubmit('增加','/product/detail','800px','500px')" class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe654;</i>增加</button>
+            <button onclick='openSubmit("增加","/product/detail?type="+$(this).attr("data-type"),"800px","500px")' th:attr="data-type=${type}" class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe654;</i>增加</button>
             <!--<button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe640;</i> 删除</button>-->
         </div>
         <div class="layui-form">
@@ -40,17 +40,14 @@
                 <colgroup>
                     <col width="150">
                     <col width="150">
-                    <col width="200">
                     <col>
+                    <col width="200">
                 </colgroup>
                 <thead>
                 <tr>
                     <th>名称</th>
                     <th>类型</th>
-                    <th>省份</th>
-                    <th>城市</th>
-                    <th>详细地址</th>
-                    <th>是否显示</th>
+                    <th>简介</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -58,14 +55,11 @@
                 <tr  th:each="obj,stat : ${page}">
                     <td th:text="${obj.sname}"></td>
                     <td th:text="${obj.itype}"></td>
-                    <td th:text="${obj.sprovince}"></td>
-                    <td th:text="${obj.scity}"></td>
-                    <td th:text="${obj.saddress}"></td>
-                    <td th:text="${obj.isshow}"></td>
+                    <td th:text="${obj.sprofiles}"></td>
                     <td>
 
                         <div class="layui-btn-group">
-                            <button onclick="edit($(this).attr('data-id'))" th:attr="data-id=${obj.id}" class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i></button>
+                            <button onclick="edit($(this).attr('data-id'))" th:attr="data-id=${obj.id}"  class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i></button>
                             <button onclick="del($(this).attr('data-id'))" th:attr="data-id=${obj.id}" class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe640;</i></button>
                         </div>
 
@@ -77,7 +71,7 @@
             </table>
         </div>
 
-        <page th:include="common/pagination::pagination"></page>
+        <!--<page th:include="common/pagination::pagination"></page>-->
 
     </div>
 </body>

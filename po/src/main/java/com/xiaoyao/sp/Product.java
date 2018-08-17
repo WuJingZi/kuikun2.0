@@ -21,25 +21,12 @@ public class Product extends BaseEntity {
 	private String simageurl;
 
 	@Column(nullable = false)
-	private String sprovince;
+	private String sprofiles;
 
-	@Column(nullable = false)
-	private String scity;
-
-	@Column(nullable = true)
-	private String saddress;
 
 	@Column(nullable = false)
 	private Integer isshow;
 
-
-	public String getSaddress() {
-		return saddress;
-	}
-
-	public void setSaddress(String saddress) {
-		this.saddress = saddress;
-	}
 
 	public String getSname() {
 		return sname;
@@ -49,6 +36,21 @@ public class Product extends BaseEntity {
 		this.sname = sname;
 	}
 
+	public String getSprofiles() {
+		return sprofiles;
+	}
+
+	public void setSprofiles(String sprofiles) {
+		this.sprofiles = sprofiles;
+	}
+
+	/**
+	 * 10：办公楼厂房
+	 * 20：商业装修
+	 * 30：餐饮装修
+	 * 40：酒店装修
+	 * @return
+	 */
 	public Integer getItype() {
 		return itype;
 	}
@@ -63,22 +65,6 @@ public class Product extends BaseEntity {
 
 	public void setSimageurl(String simageurl) {
 		this.simageurl = simageurl;
-	}
-
-	public String getSprovince() {
-		return sprovince;
-	}
-
-	public void setSprovince(String sprovince) {
-		this.sprovince = sprovince;
-	}
-
-	public String getScity() {
-		return scity;
-	}
-
-	public void setScity(String scity) {
-		this.scity = scity;
 	}
 
 	public Integer getIsshow() {

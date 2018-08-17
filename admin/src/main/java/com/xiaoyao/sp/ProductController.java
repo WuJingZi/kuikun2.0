@@ -16,6 +16,7 @@ import sys.Result;
 import sys.ServiceException;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/product/")
@@ -30,15 +31,17 @@ public class ProductController {
 
 
 	@RequestMapping("list")
-	public String list ( Model model ,@RequestParam(defaultValue = "0") int page){
-		Page<Product> list=productService.listPage(page);
+	public String list ( Model model ,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "0") int type){
+		List<Product> list=productService.listPage(page,type);
 
 		model.addAttribute("page",list);
+		model.addAttribute("type",type);
+
 		return "sp/product-list";
 	}
 
 	@GetMapping("detail")
-	public String detail (@RequestParam(defaultValue = "") String id, Model model){
+	public String detail (@RequestParam(defaultValue = "") String id,@RequestParam(defaultValue = "0") int type, Model model){
 		Product product=productService.findOne(id);
 		if(product==null) {
 			product = new Product();
@@ -47,6 +50,7 @@ public class ProductController {
 			model.addAttribute("file",file);
 		}
 		model.addAttribute("product",product);
+		model.addAttribute("type",type);
 		return "sp/product-detail";
 	}
 

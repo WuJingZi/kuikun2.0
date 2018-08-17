@@ -8,13 +8,14 @@ import com.xiaoyao.sys.FileService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 import sys.Log;
 import sys.ServiceException;
+
+import java.util.List;
 
 @Component
 public class ProductService {
@@ -38,14 +39,8 @@ public class ProductService {
 		if(StringUtils.isBlank(vo.getSname())){
 			throw new ServiceException("名称不能为空");
 		}
-		if(StringUtils.isBlank(vo.getSprovince())){
-			throw new ServiceException("省份不能为空");
-		}
-		if(StringUtils.isBlank(vo.getScity())){
-			throw new ServiceException("城市不能为空");
-		}
-		if(StringUtils.isBlank(vo.getSaddress())){
-			throw new ServiceException("详细地址不能为空");
+		if(StringUtils.isBlank(vo.getSprofiles())){
+			throw new ServiceException("简介不能为空");
 		}
 
 		File file= fileService.findOne(fileid);
@@ -58,9 +53,7 @@ public class ProductService {
 		}
 
 		product.setSname(vo.getSname());
-		product.setScity(vo.getScity());
-		product.setSprovince(vo.getSprovince());
-		product.setSaddress(vo.getSaddress());
+		product.setSprofiles(vo.getSprofiles());
 		product.setItype(vo.getItype());
 		product.setSimageurl(file.getSurl());
 		product.setIsshow(vo.getIsshow()==null?1:vo.getIsshow());
@@ -72,8 +65,12 @@ public class ProductService {
 	}
 
 
-	public Page<Product> listPage(int page){
-		return productDao.findAll( PageRequest.of(page/2, 10, Sort.by(Sort.Order.desc("sname"))));
+	public List<Product> listPage(int page,int type){
+		Product product =new Product();
+		product.setItype(type);
+		Example<Product> example=Example.of(product);
+
+		return productDao.findAll(example);
 	}
 
 
