@@ -1,0 +1,57 @@
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+.admin{
+    padding:50px 30px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.08);
+    min-height: 120px;
+}
+.admin .logo{
+    padding-left: 150px;
+    position: relative;
+}
+.admin .logo p{
+  color:#999;
+  margin-bottom: 10px;
+}
+.admin .logo label{
+    color:#fff;
+    font-size: 14px;
+    padding: 0 2px;
+    margin-left: 5px;
+    background: -webkit-linear-gradient(left, #81cdfa ,#629df8);
+    background: -o-linear-gradient(right, #81cdfa ,#629df8);
+    background: -moz-linear-gradient(right, #81cdfa ,#629df8);
+    background: linear-gradient(to right, #81cdfa ,#629df8);
+}
+.admin .logo a{
+    color:#333;
+    font-size: 14px;
+}
+.admin .logo .logo-img{
+  position: absolute;
+  left:0;
+  top:0;
+  width:120px;
+  height: 120px;
+  background: #f2f2f2;
+  border-radius: 3px;
+}
+.admin .logo .logo-img img{
+  width: 88%;
+  display: block;
+  margin: 20px auto;
+  margin-top: 40px;
+}
+.admin .logo .logo-img p{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height:22px;
+  text-align: center;
+  line-height: 22px;
+  background: rgba(0,0,0,0.2);
+  color:#fff;
+}
