@@ -13,3 +13,12 @@
 .align-mid{
   text-align: center;
 }
+.red{
+  color:#ff0000;
+}
+.left10{
+  margin-left: 10px;
+}
+.left5{
+  margin-left: 5px;
+}

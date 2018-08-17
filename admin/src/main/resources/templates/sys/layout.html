@@ -7,9 +7,8 @@
     <title>首页</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-
-
+    <link type="image/x-icon" th:href="@{~/pub/images/favicon.ico}" rel="shortcut icon">
+    <link rel="stylesheet" th:href="@{~/pub/css/define.css}"/>
     <div th:include="common/office::css" th:remove="tag"></div>
     <div th:include="common/office::js" th:remove="tag"></div>
     <div th:include="common/office::init" th:remove="tag"></div>
@@ -33,10 +32,6 @@
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
                     <i th:text="${session.operator.soperatorname}"></i>
                 </a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">安全设置</a></dd>
-                </dl>
             </li>
             <li class="layui-nav-item"><a th:href="@{~/sys/logout}">退出</a></li>
         </ul>
@@ -89,7 +84,7 @@
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
-        © layui.com - 底部固定区域
+        © 上海逵坤建筑工程有限公司
     </div>
 </div>
 
