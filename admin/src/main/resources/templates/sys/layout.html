@@ -48,9 +48,21 @@
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item"><a th:href="@{/sys/index}">控制台</a></li>
                 <li class="layui-nav-item" th:classappend="${#strings.equals(param.laythis,'yuangong')?'layui-nav-itemed':''}">
-                    <a class="" href="javascript:;">员工管理</a>
+                    <a class="" href="javascript:;">账户管理</a>
                     <dl class="layui-nav-child">
                         <dd><a th:href="@{~/operator/list(laythis='yuangong')}">员工列表</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">首页参数配置</a>
+                    <dl class="layui-nav-child">
+                        <dd><a>banner轮播</a></dd>
+                    </dl>
+                    <dl class="layui-nav-child">
+                        <dd><a>工程施工案例</a></dd>
+                    </dl>
+                    <dl class="layui-nav-child">
+                        <dd><a>友情链接</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item" th:classappend="${#strings.equals(param.laythis,'anli')?'layui-nav-itemed':''}">
