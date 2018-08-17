@@ -14,5 +14,14 @@
         <module name="service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admin" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="dao" target="1.8" />
+      <module name="front" target="1.8" />
+      <module name="parent" target="1.8" />
+      <module name="po" target="1.8" />
+      <module name="service" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

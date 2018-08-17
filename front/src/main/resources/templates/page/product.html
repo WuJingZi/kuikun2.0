@@ -50,77 +50,37 @@
                     </div>
                     <div class="case-content">
                         <div class="col-padding-3">
-                            <!--所有分类-->
+                            <!--办公楼厂房装修-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide display">
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case1.jpg}" class="img-fluid smallimg">
-                                    <h2>天域生态</h2>
-                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                                <a href="#" class="direction-reveal__card" th:each="obj:${changfang}">
+                                    <img th:src="${obj.simageurl}" class="img-fluid smallimg">
+                                    <h2 th:text="${obj.sname}"></h2>
+                                    <p th:text="${obj.sprofiles}"></p>
 
                                 </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>巴士项目</h2>
-                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case3.jpg}" class="img-fluid smallimg">
-                                    <h2>苏州项目</h2>
-                                    <p>杨浦区国权北路1688号 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case4.jpg}" class="img-fluid smallimg">
-                                    <h2>光谷项目</h2>
-                                    <p>杨浦区国权北路1688号湾谷科技园 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case1.jpg}" class="img-fluid smallimg">
-                                    <h2>光谷项目</h2>
-                                    <p>杨浦区国权北路1688号湾谷科技园 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case4.jpg}" class="img-fluid smallimg">
-                                    <h2>天域生态</h2>
-                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
+                            </div>
+                            <!--商业装修工程-->
+                            <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
+                                <a href="#" class="direction-reveal__card" th:each="obj:${shangye}">
+                                    <img th:src="${obj.simageurl}" class="img-fluid smallimg">
+                                    <h2 th:text="${obj.sname}"></h2>
+                                    <p th:text="${obj.sprofiles}"></p>
                                 </a>
                             </div>
-                            <!--酒店分类-->
+                            <!--餐饮装修工程-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>巴士项目</h2>
-                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case3.jpg}" class="img-fluid smallimg">
-                                    <h2>苏州项目</h2>
-                                    <p>杨浦区国权北路1688号 20000平</p>
+                                <a href="#" class="direction-reveal__card" th:each="obj:${canyin}">
+                                    <img th:src="${obj.simageurl}" class="img-fluid smallimg">
+                                    <h2 th:text="${obj.sname}"></h2>
+                                    <p th:text="${obj.sprofiles}"></p>
                                 </a>
                             </div>
-                            <!--餐饮分类-->
+                            <!--酒店装修工程-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case1.jpg}" class="img-fluid smallimg">
-                                    <h2>光谷项目</h2>
-                                    <p>杨浦区国权北路1688号湾谷科技园 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case4.jpg}" class="img-fluid smallimg">
-                                    <h2>天域生态</h2>
-                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
-                                </a>
-                            </div>
-                            <!--休闲分类-->
-                            <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>巴士项目</h2>
-                                    <p>杨浦区国权北路湾谷科技园 20000平</p>
-                                </a>
-                                <a href="#" class="direction-reveal__card">
-                                    <img th:src="@{~/pub/images/case/case3.jpg}" class="img-fluid smallimg">
-                                    <h2>苏州项目</h2>
-                                    <p>杨浦区国权北路1688号 20000平</p>
+                                <a href="#" class="direction-reveal__card" th:each="obj:${jiudian}">
+                                    <img th:src="${obj.simageurl}" class="img-fluid smallimg">
+                                    <h2 th:text="${obj.sname}"></h2>
+                                    <p th:text="${obj.sprofiles}"></p>
                                 </a>
                             </div>
                         </div>
