@@ -43,13 +43,13 @@
             </colgroup>
             <thead>
             <tr>
-                <th>简介</th>
+                <th>名称</th>
                 <th>操作</th>
             </tr>
             </thead>
             <tbody>
             <tr  th:each="obj,stat : ${page}">
-                <td th:text="${obj.sprofiles}"></td>
+                <td th:text="'banner'+${stat.index+1}"></td>
                 <td>
 
                     <div class="layui-btn-group">

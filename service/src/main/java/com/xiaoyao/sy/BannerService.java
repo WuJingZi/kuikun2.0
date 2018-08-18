@@ -34,8 +34,10 @@ public class BannerService {
 	}
 
 	public void save(Banner vo, String fileid){
-		if(StringUtils.isBlank(vo.getSprofiles())){
+		if(vo.getItype()==20 && StringUtils.isBlank(vo.getSprofiles())){
 			throw new ServiceException("简介不能为空");
+		}else if(vo.getItype()==10){
+			vo.setSprofiles("");  //banner 不需要简介
 		}
 
 		File file= fileService.findOne(fileid);
