@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" th:href="@{~/pub/css/admin.css}"/>
+    <div th:include="common/office::css" th:remove="tag"></div>
+    <div th:include="common/office::js" th:remove="tag"></div>
+</head>
+
+<body>
+<form id="submitForm" class="layui-form" th:action="@{~/product/save}" method="post">
+    <div class="layui- top30 pd-rg50">
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="sname" th:value="${product.sname}" lay-verify="title" class="layui-input">
+                <input type="hidden" name="id" th:value="${product.id}"/>
+                <input type="hidden" name="itype" th:value="${product.itype==null?type:product.itype}"/>
+                <input name="simageurl" id="simageurl" type="hidden" th:value="${product.simageurl}"/>
+                <input type="hidden" id="sfileid" th:value="${file!=null?file.id:''}" name="sfileid"/>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">简介:</label>
+            <div class="layui-input-block">
+                <input type="text" name="sprofiles" th:value="${product.sprofiles}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片:</label>
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <span class="red left5">*上传图片大小为1118*715</span>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <p class="img-con">
+                <img src="../pub/images/no-photo.jpg">
+            </p>
+        </div>
+
+
+
+    </div>
+
+
+</form>
+
+<script>
+    layui.use('upload', function(){
+        var upload = layui.upload;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            ,url: '/upload/uploadimg' //上传接口
+            ,done: function(res){
+                if(res.success){
+                    $("#sfileid").val(res.obj.id);
+                    $("#simageurl").val(res.obj.surl);
+                    layer.msg("上传成功");
+                }else{
+                    layer.msg("上传失败");
+                    $("#sfileid").val("");
+                }
+            }
+            ,error: function(){
+                layer.msg("上传失败");
+                $("#sfileid").val("");
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>
