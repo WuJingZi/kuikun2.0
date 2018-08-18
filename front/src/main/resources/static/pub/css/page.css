@@ -264,6 +264,15 @@
   color: #999;
   font-size: 14px;
 }
+.view-top{
+  margin-top: 20px;
+}
+.view-card{
+  margin-bottom: 20px;
+}
+.view-card img{
+  cursor: pointer;
+}
 /*服务*/
 .serve-list{
   padding-left: 20px;

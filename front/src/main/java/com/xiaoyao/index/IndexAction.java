@@ -48,6 +48,11 @@ public class IndexAction {
 		return  "page/product";
 	}
 
+	@GetMapping("product-view")
+	public String productView(){
+		return  "page/product-view";
+	}
+
 	@GetMapping("serve")
 	public String serve(){
 		return  "page/serve";

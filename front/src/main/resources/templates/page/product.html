@@ -19,8 +19,6 @@
                 $('.case-content .direction-reveal').removeClass('display');
                 $('.case-content .direction-reveal').eq(index).addClass('display');
             });
-            var obj = new zoom('mask', 'bigimg','smallimg');
-            obj.init();
         });
     </script>
 
@@ -52,7 +50,7 @@
                         <div class="col-padding-3">
                             <!--办公楼厂房装修-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide display">
-                                <a href="#" class="direction-reveal__card" th:each="obj:${changfang}">
+                                <a th:href="@{~/product-view}" class="direction-reveal__card" th:each="obj:${changfang}">
                                     <img th:src="${obj.simageurl}" class="img-fluid smallimg">
                                     <h2 th:text="${obj.sname}"></h2>
                                     <p th:text="${obj.sprofiles}"></p>
