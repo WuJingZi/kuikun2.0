@@ -23,11 +23,11 @@ public class InterLinkService {
 		return interLinkDao.findById(id).orElse(null);
 	}
 
-	public Page<InterLink> findAll(Pageable pageable){
-		return interLinkDao.findAll(pageable);
+	public List<InterLink> findAll(){
+		return interLinkDao.findAll();
 	}
 
-	public void save(InterLink vo, String fileid){
+	public void save(InterLink vo){
 		if(StringUtils.isBlank(vo.getSname())){
 			throw new ServiceException("名称不能为空");
 		}
@@ -40,6 +40,10 @@ public class InterLinkService {
 		InterLink interLink=new InterLink();
 		if(StringUtils.isNotBlank(vo.getId())){
 			interLink=this.findOne(vo.getId());
+		}
+
+		if(!vo.getSurl().startsWith("http")){
+			vo.setSurl(new StringBuffer("http").append("://").append(vo.getSurl()).toString());
 		}
 
 		interLink.setSname(vo.getSname());

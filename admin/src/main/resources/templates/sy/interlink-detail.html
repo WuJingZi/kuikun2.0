@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" th:href="@{~/pub/css/admin.css}"/>
+    <div th:include="common/office::css" th:remove="tag"></div>
+    <div th:include="common/office::js" th:remove="tag"></div>
+</head>
+
+<body>
+<form id="submitForm" class="layui-form" th:action="@{~/interlink/save}" method="post">
+    <div class="layui- top30 pd-rg50">
+        <div class="layui-form-item">
+            <label class="layui-form-label">链接名称:</label>
+            <div class="layui-input-block">
+                <input type="text" name="sname" th:value="${interLink.sname}" lay-verify="required"  class="layui-input">
+                <input type="hidden" name="id" th:value="${interLink.id}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">链接网址:</label>
+            <div class="layui-input-block">
+                <input type="text" name="surl" th:value="${interLink.surl}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</form>
+
+
+
+</body>
+
+</html>

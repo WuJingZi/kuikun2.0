@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" xmlns:data="http://www.w3.org/1999/xhtml"
+      layout:decorator="~{sys/layout}">
+<!-- layout文件路径-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+        function edit(obj) {
+            openSubmit('编辑','/interlink/detail?id='+obj,'800px','500px');
+        }
+
+        function del(obj) {
+            layer.confirm("确定删除？",function () {
+                location="/interlink/delete?id="+obj;
+            });
+        }
+
+    </script>
+</head>
+<div layout:fragment="content" class="layui-body layui-tab-content site-demo site-demo-body">
+    <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+        <legend>友情链接列表</legend>
+    </fieldset>
+    <div>
+        <form id="searchForm" th:action="@{~/interlink/list}" method="post">
+            <input type="hidden" name="page" value="0">
+        </form>
+    </div>
+    <div >
+        <button onclick='openSubmit("增加友链","/interlink/detail","800px","500px")' class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe654;</i>增加友链</button>
+        <!--<button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe640;</i> 删除</button>-->
+    </div>
+    <div class="layui-form">
+        <table class="layui-table">
+            <colgroup>
+                <col>
+                <col>
+                <col width="200">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>名称</th>
+                <th>网址</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr  th:each="obj,stat : ${page}">
+                <td th:text="${obj.sname}"></td>
+                <td><a target="_blank" th:href="${obj.surl}"><code th:text="${obj.surl}"></code></a></td>
+
+                <td>
+
+                    <div class="layui-btn-group">
+                        <button onclick="edit($(this).attr('data-id'))" th:attr="data-id=${obj.id}"  class="layui-btn layui-btn-sm" title="编辑"><i class="layui-icon">&#xe642;</i></button>
+                        <button onclick="del($(this).attr('data-id'))" th:attr="data-id=${obj.id}" class="layui-btn layui-btn-sm" title="删除"><i class="layui-icon">&#xe640;</i></button>
+                    </div>
+
+
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <!--<page th:include="common/pagination::pagination"></page>-->
+
+</div>
+</body>
+
+</html>
