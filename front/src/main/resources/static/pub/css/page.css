@@ -39,12 +39,24 @@
   left:80px;
 }
 .feature .swiper-slide .cover p{
-  color:#333;
+  color: #333;
   font-size: 34px;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: 400;
-  padding:0 20px;
+  padding: 0 20px;
   letter-spacing: 3px;
+  position: relative;
+  z-index: 100;
+  width: 670px;
+}
+.feature .swiper-slide .cover h2{
+  position: absolute;
+  z-index: 99;
+  left:0;
+  top:60px;
+  width:460px;
+  background: #fff;
+  height: 60px;
 }
 .feature .swiper-slide .cover p.mobile{
   display: none;
@@ -59,6 +71,13 @@
   position: relative;
 }
 .feature .swiper-slide .cover p.white-bg span{
+  position: absolute;
+  right: 20px;
+  color:#999;
+  font-size: 16px;
+  top:26px;
+}
+.feature .swiper-slide .cover h2 span{
   position: absolute;
   right: 20px;
   color:#999;
@@ -411,6 +430,12 @@
     font-size: 20px;
     color: #fff;
     display: block;
+    width:auto;
+    line-height: 1.4;
+    letter-spacing: 0;
+  }
+  .feature .swiper-slide .cover h2{
+    display: none;
   }
   .feature .swiper-slide label{
     position: absolute;
