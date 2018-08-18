@@ -231,27 +231,7 @@
             <div class="col-lg-4 col-md-4 copy-link">
                 <ul>
                     <li>友情链接</li>
-                    <li><a href="#">上海厂房装修</a></li>
-                    <li><a href="#">上海办公楼装修</a></li>
-                    <li><a href="#">餐厅装修公司</a></li>
-                    <li><a href="#">品牌策划公司</a></li>
-                    <li><a href="#">旅游小镇规划</a></li>
-                    <li><a href="#">商场设计</a></li>
-                    <li><a href="#">企业网络营销策划</a></li>
-                    <li><a href="#">杭州样板房设计</a></li>
-                    <li><a href="#">办公设计</a></li>
-                    <li><a href="#">上海办公楼装修</a></li>
-                    <li><a href="#">餐厅装修公司</a></li>
-                    <li><a href="#">品牌策划公司</a></li>
-                    <li><a href="#">旅游小镇规划</a></li>
-                    <li><a href="#">商场设计</a></li>
-                    <li><a href="#">企业网络营销策划</a></li>
-                    <li><a href="#">杭州样板房设计</a></li>
-                    <li><a href="#">办公设计</a></li>
-                    <li><a href="#">旅游小镇规划</a></li>
-                    <li><a href="#">上海办公楼装修</a></li>
-                    <li><a href="#">餐厅装修公司</a></li>
-                    <li><a href="#">活动</a></li>
+                    <li th:each="obj:${interLinks}"><a th:href="${obj.surl}" th:text="${obj.sname}"></a></li>
                 </ul>
             </div>
         </div>

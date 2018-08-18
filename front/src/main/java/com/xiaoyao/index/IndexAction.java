@@ -5,6 +5,8 @@ import com.xiaoyao.product.ProductService;
 import com.xiaoyao.sp.Product;
 import com.xiaoyao.sy.Banner;
 import com.xiaoyao.sy.BannerService;
+import com.xiaoyao.sy.InterLink;
+import com.xiaoyao.sy.InterLinkService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,15 +24,24 @@ public class IndexAction {
 	private ProductService productService;
 	@Autowired
 	private BannerService bannerService;
+	@Autowired
+	private InterLinkService interLinkService;
 
 
 	@GetMapping("index")
 	public String index(Model model){
 
+		//banner
 		List<Banner> banners=bannerService.findTop4ByItype(10);
+
+		//工程展示
 		List<Banner> gongchengs=bannerService.findTop4ByItype(20);
 		model.addAttribute("banners",banners);
 		model.addAttribute("gongchengs",gongchengs);
+
+		//友情链接
+		List<InterLink> interLinks=interLinkService.findByProperty(new InterLink(),20);
+		model.addAttribute("interLinks",interLinks);
 		return  "page/index";
 	}
 
