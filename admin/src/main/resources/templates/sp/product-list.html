@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
         function edit(obj) {
-            openSubmit('修改','/product/detail?id='+obj,'800px','500px');
+            openSubmit('编辑','/product/detail?id='+obj,'800px','500px');
         }
 
         function del(obj) {
@@ -35,7 +35,7 @@
             </form>
         </div>
         <div >
-            <button onclick='openSubmit("增加","/product/detail?type="+$(this).attr("data-type"),"800px","500px")' th:attr="data-type=${type}" class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe654;</i>增加</button>
+            <button onclick='openSubmit("增加案例","/product/detail?type="+$(this).attr("data-type"),"800px","500px")' th:attr="data-type=${type}" class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe654;</i>增加案例</button>
             <!--<button class="layui-btn layui-btn-sm layui-btn-normal"><i class="layui-icon">&#xe640;</i> 删除</button>-->
         </div>
         <div class="layui-form">

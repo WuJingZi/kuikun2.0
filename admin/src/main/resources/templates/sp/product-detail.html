@@ -7,17 +7,14 @@
     <title>首页</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" th:href="@{~/pub/css/admin.css}"/>
     <div th:include="common/office::css" th:remove="tag"></div>
     <div th:include="common/office::js" th:remove="tag"></div>
-    <script>
-
-
-    </script>
 </head>
 
 <body>
 <form id="submitForm" class="layui-form" th:action="@{~/product/save}" method="post">
-    <div class="layui-">
+    <div class="layui- top30 pd-rg50">
         <div class="layui-form-item">
             <label class="layui-form-label">名称：</label>
             <div class="layui-input-block">
@@ -39,8 +36,13 @@
             <button type="button" class="layui-btn" id="test1">
                 <i class="layui-icon">&#xe67c;</i>上传图片
             </button>
-            <span class="red left5">*上传图片大小为664*426</span>
+            <span class="red left5">*上传图片大小为1118*715</span>
         </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label"></label>
+            <p class="img-con"></p>
+        </div>
+
 
 
     </div>
