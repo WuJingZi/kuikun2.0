@@ -37,7 +37,7 @@ public class BannerController {
 
 			return "sy/banner-list";
 		}
-		return "";
+		return "sy/gongcheng-list";
 	}
 
 	@GetMapping("detail")
@@ -50,7 +50,11 @@ public class BannerController {
 			model.addAttribute("file",file);
 		}
 		model.addAttribute("banner",banner);
-		return "sy/banner-detail";
+		if(type==10) {
+			return "sy/banner-detail";
+		}else{
+			return "sy/gongcheng-detail";
+		}
 	}
 
 	@PostMapping("save")
