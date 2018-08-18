@@ -11,12 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script>
         function edit(obj) {
-            openSubmit('编辑','/product/detail?id='+obj,'800px','500px');
+            openSubmit('编辑','/banner/detail?id='+obj,'800px','500px');
         }
 
         function del(obj) {
             layer.confirm("确定删除？",function () {
-                location="/product/delete?id="+obj;
+                location="/banner/delete?id="+obj;
             });
         }
 
