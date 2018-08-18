@@ -85,7 +85,7 @@ public class BannerController {
 			Msg.error(rmodel,"删除失败");
 			e.printStackTrace();
 		}
-		return "redirect:x";
+		return "redirect:list";
 	}
 
 
