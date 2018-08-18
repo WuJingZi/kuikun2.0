@@ -137,8 +137,6 @@ input:-webkit-autofill {
     display: inline-block;
     width:200px;
     height: 160px;
-    background: url(../../pub/images/no-photo.jpg);
-    background-size: 100% 100%;
     border:1px solid #dcdcdc;
 }
 .layui-form-item .img-con img{
