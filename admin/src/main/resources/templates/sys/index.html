@@ -33,37 +33,47 @@
         </div>
         <div class="gkDiv">
             <span class="gk1"></span>
-            <span class="gk2">常用功能</span>
+            <span class="gk2">项目案例</span>
         </div>
         <div class="admin-plus">
             <div class="layui-row">
-                <div class="layui-col-xs4">
+                <div class="layui-col-xs3">
                     <div class="grid-demo">
-                        <a href="">
+                        <a th:href="@{~/product/list(laythis='anli',type=10)}">
                         <div class="grid-demo-bg1">
-                            <h2>Banner</h2>
+                            <h2>办公室厂房</h2>
                             <img th:src="@{~/pub/images/link-img1.png}">
                         </div>
                         </a>
                     </div>
                 </div>
-                <div class="layui-col-xs4">
+                <div class="layui-col-xs3">
                     <div class="grid-demo">
-                        <a  th:href="@{~/product/list(laythis='anli',type=10)}">
+                        <a th:href="@{~/product/list(laythis='anli',type=20)}">
                         <div class="grid-demo-bg2">
-                            <h2>案例</h2>
+                            <h2>商业装修</h2>
                             <img th:src="@{~/pub/images/link-img2.png}">
                         </div>
                         </a>
                     </div>
                 </div>
-                <div class="layui-col-xs4">
+                <div class="layui-col-xs3">
                     <div class="grid-demo">
-                        <a href="">
+                        <a th:href="@{~/product/list(laythis='anli',type=30)}">
                         <div class="grid-demo-bg3">
-                            <h2>友情链接</h2>
+                            <h2>餐饮装修</h2>
                             <img th:src="@{~/pub/images/link-img3.png}">
                         </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="layui-col-xs3">
+                    <div class="grid-demo">
+                        <a th:href="@{~/product/list(laythis='anli',type=40)}">
+                            <div class="grid-demo-bg4">
+                                <h2>酒店装修</h2>
+                                <img th:src="@{~/pub/images/link-img4.png}">
+                            </div>
                         </a>
                     </div>
                 </div>

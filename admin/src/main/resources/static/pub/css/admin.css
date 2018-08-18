@@ -106,29 +106,35 @@ input:-webkit-autofill {
 }
 .grid-demo-bg1{
     background: #b491e8;
-    min-height: 200px;
+    min-height: 120px;
     padding: 20px;
     position: relative;
 }
 .grid-demo-bg2{
     background: #f3ac9b;
-    min-height: 200px;
+    min-height: 120px;
     padding: 20px;
     position: relative;
 }
 .grid-demo-bg3{
     background: #94c3f3;
-    min-height: 200px;
+    min-height: 120px;
+    padding: 20px;
+    position: relative;
+}
+.grid-demo-bg4{
+    background: #8695ec;
+    min-height: 120px;
     padding: 20px;
     position: relative;
 }
 .grid-demo h2{
     color:#fff;
-    font-size: 28px;
+    font-size: 18px;
 }
 .grid-demo img{
     position: absolute;
-    width: 200px;
+    width: 120px;
     top: 30px;
     right: 10px;
     opacity: 0.5;
