@@ -20,6 +20,7 @@
     <div layout:fragment="content" class="layui-body layui-tab-content">
 
         <div class="admin">
+            <h3>Design</h3>
             <div class="logo">
                 <div class="logo-img">
                     <img th:src="@{~/pub/images/logo.png}">
@@ -32,23 +33,38 @@
         </div>
         <div class="gkDiv">
             <span class="gk1"></span>
-            <span class="gk2">网站概况</span>
+            <span class="gk2">常用功能</span>
         </div>
         <div class="admin-plus">
             <div class="layui-row">
                 <div class="layui-col-xs4">
                     <div class="grid-demo">
-                        <div class="grid-demo-bg1"></div>
+                        <a href="">
+                        <div class="grid-demo-bg1">
+                            <h2>Banner</h2>
+                            <img th:src="@{~/pub/images/link-img1.png}">
+                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="layui-col-xs4">
                     <div class="grid-demo">
-                        <div class="grid-demo-bg2"></div>
+                        <a  th:href="@{~/product/list(laythis='anli',type=10)}">
+                        <div class="grid-demo-bg2">
+                            <h2>案例</h2>
+                            <img th:src="@{~/pub/images/link-img2.png}">
+                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="layui-col-xs4">
                     <div class="grid-demo">
-                        <div class="grid-demo-bg3"></div>
+                        <a href="">
+                        <div class="grid-demo-bg3">
+                            <h2>友情链接</h2>
+                            <img th:src="@{~/pub/images/link-img3.png}">
+                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
