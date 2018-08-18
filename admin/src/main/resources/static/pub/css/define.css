@@ -22,6 +22,12 @@
 .left5{
   margin-left: 5px;
 }
+.right10{
+  margin-right: 10px;
+}
+.right5{
+  margin-right: 5px;
+}
 .top10{
   margin-top: 10px;
 }
@@ -39,4 +45,7 @@
 }
 .pd-rg50{
   padding-right: 50px;
+}
+.layui-nav-tree .layui-nav-child a {
+  padding-left: 40px;
 }

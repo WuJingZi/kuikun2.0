@@ -119,3 +119,17 @@ input:-webkit-autofill {
     height:100%;
     width: 100%;
 }
+.admin-plus{
+    padding:30px 20px;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.08);
+    min-height: 120px;
+    background: #fff;
+}
+.admin-plus textarea{
+    width: 100%;
+    min-height: 52px;
+    border:1px solid #e6e6e6;
+    padding: 5px 10px!important;
+    box-sizing: border-box;
+    height: auto;
+}

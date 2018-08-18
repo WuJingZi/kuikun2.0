@@ -42,38 +42,38 @@
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item"><a th:href="@{/sys/index}">控制台</a></li>
+                <li class="layui-nav-item"><a th:href="@{/sys/index}"><i class="layui-icon right5">&#xe614;</i>控制台</a></li>
                 <li class="layui-nav-item" th:classappend="${#strings.equals(param.laythis,'yuangong')?'layui-nav-itemed':''}">
-                    <a class="" href="javascript:;">账户管理</a>
+                    <a class="" href="javascript:;"><i class="layui-icon right5">&#xe612;</i>账户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a th:href="@{~/operator/list(laythis='yuangong')}">员工列表</a></dd>
+                        <dd><a th:href="@{~/operator/list(laythis='yuangong')}"><i class="layui-icon right5">&#xe613;</i>员工列表</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
-                    <a href="javascript:;">首页参数配置</a>
+                    <a href="javascript:;"><i class="layui-icon right5">&#xe629;</i>首页参数配置</a>
                     <dl class="layui-nav-child">
-                        <dd><a>banner轮播</a></dd>
+                        <dd><a><i class="layui-icon right5">&#xe674;</i>banner轮播</a></dd>
                     </dl>
                     <dl class="layui-nav-child">
-                        <dd><a>工程施工案例</a></dd>
+                        <dd><a><i class="layui-icon right5">&#xe639;</i>工程施工案例</a></dd>
                     </dl>
                     <dl class="layui-nav-child">
-                        <dd><a>友情链接</a></dd>
+                        <dd><a><i class="layui-icon right5">&#xe64c;</i>友情链接</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item" th:classappend="${#strings.equals(param.laythis,'anli')?'layui-nav-itemed':''}">
-                    <a href="javascript:;">案例管理</a>
+                    <a href="javascript:;"><i class="layui-icon right5">&#xe64a;</i>案例管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a  th:href="@{~/product/list(laythis='anli',type=10)}">办公楼厂房</a></dd>
+                        <dd><a  th:href="@{~/product/list(laythis='anli',type=10)}"><i class="layui-icon right5">&#xe639;</i>办公楼厂房</a></dd>
                     </dl>
                     <dl class="layui-nav-child">
-                        <dd><a  th:href="@{~/product/list(laythis='anli',type=20)}">商业装修</a></dd>
+                        <dd><a  th:href="@{~/product/list(laythis='anli',type=20)}"><i class="layui-icon right5">&#xe639;</i>商业装修</a></dd>
                     </dl>
                     <dl class="layui-nav-child">
-                        <dd><a  th:href="@{~/product/list(laythis='anli',type=30)}">餐饮装修</a></dd>
+                        <dd><a  th:href="@{~/product/list(laythis='anli',type=30)}"><i class="layui-icon right5">&#xe639;</i>餐饮装修</a></dd>
                     </dl>
                     <dl class="layui-nav-child">
-                        <dd><a  th:href="@{~/product/list(laythis='anli',type=40)}">酒店装修</a></dd>
+                        <dd><a  th:href="@{~/product/list(laythis='anli',type=40)}"><i class="layui-icon right5">&#xe639;</i>酒店装修</a></dd>
                     </dl>
                 </li>
             </ul>
