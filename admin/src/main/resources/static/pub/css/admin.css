@@ -159,3 +159,6 @@ input:-webkit-autofill {
     box-sizing: border-box;
     height: auto;
 }
+.layui-layout-admin .layui-footer{
+    text-align: right;
+}
