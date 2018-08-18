@@ -88,7 +88,11 @@ public class ProductController {
 
 
 
+	@GetMapping("info")
+	public String info (@RequestParam(defaultValue = "") String productid, Model model){
 
+		return "sp/product-info";
+	}
 
 	
 	
