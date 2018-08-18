@@ -20,7 +20,7 @@
             <div class="layui-input-block">
                 <textarea name="sprofiles" th:text="${banner.sprofiles}" placeholder="请输入banner简介" class="layui-textarea"></textarea>
                 <input type="hidden" name="id" th:value="${banner.id}">
-                <input type="hidden" id="sfileid" name="sfileid"/>
+                <input type="hidden" id="sfileid" th:value="${file!=null?file.id:''}" name="sfileid"/>
                 <input type="hidden" name="itype" value="10"/>
             </div>
         </div>
@@ -34,11 +34,14 @@
         <div class="layui-form-item">
             <label class="layui-form-label"></label>
             <!--<p class="img-con" ></p>-->
-            <div th:if="${banner.simageurl!=null}">
-                <img id="previewimg" th:src="${banner.simageurl}" />
-            </div>
-            <div th:unless="${banner.simageurl==null}">
-                <img id="previewimg" th:src="@{~/pub/images/link-img1.png}" />
+            <div>
+                <span th:if="${banner.simageurl!=null}">
+                    <img id="previewimg" th:src="${banner.simageurl}" />
+                </span>
+                32
+                <span th:unless="${banner.id==null || banner.id==''}">
+                    <img id="previewimg" th:src="@{~/pub/images/logo.png}" />
+                </span>
             </div>
         </div>
 
