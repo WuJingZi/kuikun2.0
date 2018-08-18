@@ -4,9 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import sys.Log;
 import sys.ServiceException;
@@ -55,7 +53,6 @@ public class InterLinkService {
 
 
 	public List<InterLink> findByProperty(InterLink vo,int limit){
-		InterLink interLink =new InterLink();
 		Example<InterLink> example=Example.of(vo);
 
 		return interLinkDao.findAll(example, PageRequest.of(0,limit)).getContent();
