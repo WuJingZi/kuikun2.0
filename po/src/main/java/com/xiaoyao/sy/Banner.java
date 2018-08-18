@@ -11,8 +11,6 @@ import javax.persistence.Table;
 public class Banner extends BaseEntity {
 
 
-	@Column(nullable = false)
-	private String sname;
 
 	@Column(nullable = false)
 	private Integer itype;
@@ -28,13 +26,6 @@ public class Banner extends BaseEntity {
 	private Integer isshow;
 
 
-	public String getSname() {
-		return sname;
-	}
-
-	public void setSname(String sname) {
-		this.sname = sname;
-	}
 
 	public String getSprofiles() {
 		return sprofiles;
