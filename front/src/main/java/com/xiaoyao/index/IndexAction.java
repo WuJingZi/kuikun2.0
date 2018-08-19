@@ -1,8 +1,10 @@
 package com.xiaoyao.index;
 
 import com.xiaoyao.hy.UserService;
+import com.xiaoyao.product.ProductInfoService;
 import com.xiaoyao.product.ProductService;
 import com.xiaoyao.sp.Product;
+import com.xiaoyao.sp.ProductInfo;
 import com.xiaoyao.sy.Banner;
 import com.xiaoyao.sy.BannerService;
 import com.xiaoyao.sy.InterLink;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,6 +29,8 @@ public class IndexAction {
 	private BannerService bannerService;
 	@Autowired
 	private InterLinkService interLinkService;
+	@Autowired
+	private ProductInfoService productInfoService;
 
 
 	@GetMapping("index")
@@ -60,7 +65,9 @@ public class IndexAction {
 	}
 
 	@GetMapping("product-view")
-	public String productView(){
+	public String productView(@RequestParam(defaultValue = "") String productid,Model model){
+		List<ProductInfo> productInfos=productInfoService.findByProperties(new ProductInfo().setSproductid(productid),6);
+		model.addAttribute("productInfos",productInfos);
 		return  "page/product-view";
 	}
 

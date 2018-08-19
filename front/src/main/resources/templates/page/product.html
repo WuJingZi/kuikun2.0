@@ -50,7 +50,7 @@
                         <div class="col-padding-3">
                             <!--办公楼厂房装修-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide display">
-                                <a th:href="@{~/product-view}" class="direction-reveal__card" th:each="obj:${changfang}">
+                                <a th:href="@{~/product-view(productid=${obj.id})}" class="direction-reveal__card" th:each="obj:${changfang}">
                                     <img th:src="${obj.simageurl}" class="img-fluid smallimg">
                                     <h2 th:text="${obj.sname}"></h2>
                                     <p th:text="${obj.sprofiles}"></p>
@@ -59,7 +59,7 @@
                             </div>
                             <!--商业装修工程-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
-                                <a href="#" class="direction-reveal__card" th:each="obj:${shangye}">
+                                <a th:href="@{~/product-view(productid=${obj.id})}" class="direction-reveal__card" th:each="obj:${shangye}">
                                     <img th:src="${obj.simageurl}" class="img-fluid smallimg">
                                     <h2 th:text="${obj.sname}"></h2>
                                     <p th:text="${obj.sprofiles}"></p>
@@ -67,7 +67,7 @@
                             </div>
                             <!--餐饮装修工程-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
-                                <a href="#" class="direction-reveal__card" th:each="obj:${canyin}">
+                                <a th:href="@{~/product-view(productid=${obj.id})}" class="direction-reveal__card" th:each="obj:${canyin}">
                                     <img th:src="${obj.simageurl}" class="img-fluid smallimg">
                                     <h2 th:text="${obj.sname}"></h2>
                                     <p th:text="${obj.sprofiles}"></p>
@@ -75,7 +75,7 @@
                             </div>
                             <!--酒店装修工程-->
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide">
-                                <a href="#" class="direction-reveal__card" th:each="obj:${jiudian}">
+                                <a th:href="@{~/product-view(productid=${obj.id})}" class="direction-reveal__card" th:each="obj:${jiudian}">
                                     <img th:src="${obj.simageurl}" class="img-fluid smallimg">
                                     <h2 th:text="${obj.sname}"></h2>
                                     <p th:text="${obj.sprofiles}"></p>

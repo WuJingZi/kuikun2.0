@@ -42,30 +42,11 @@
                     <div class="case-content">
                         <div class="col-padding-3 view-top">
                             <div class="direction-reveal direction-reveal--3-grid-flexbox direction-reveal--demo-slide display">
-                                <div class="direction-reveal__card view-card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>会议室</h2>
+                                <div class="direction-reveal__card view-card" th:each="obj:${productInfos}">
+                                    <img th:src="${obj.simageurl}" class="img-fluid smallimg">
+                                    <h2 th:text="${obj.sname}"></h2>
                                 </div>
-                                <div class="direction-reveal__card view-card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>前台</h2>
-                                </div>
-                                <div class="direction-reveal__card view-card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>会议室</h2>
-                                </div>
-                                <div class="direction-reveal__card view-card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>会议室</h2>
-                                </div>
-                                <div class="direction-reveal__card view-card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>会议室</h2>
-                                </div>
-                                <div class="direction-reveal__card view-card">
-                                    <img th:src="@{~/pub/images/case/case2.jpg}" class="img-fluid smallimg">
-                                    <h2>会议室</h2>
-                                </div>
+
                             </div>
                         </div>
                     </div>
