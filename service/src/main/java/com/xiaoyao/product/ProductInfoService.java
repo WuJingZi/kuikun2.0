@@ -54,6 +54,10 @@ public class ProductInfoService {
 			throw new ServiceException("productid不能为空");
 		}
 
+		if(coutByProperties(new ProductInfo().setSproductid(vo.getSproductid()))>6){
+			throw new ServiceException("为了官网的美观最多只能显示6张图");
+		}
+
 		productInfo.setSproductid(vo.getSproductid());
 		productInfo.setSname(vo.getSname());
 		productInfo.setSimageurl(file.getSurl());
@@ -80,6 +84,11 @@ public class ProductInfoService {
 	public List<ProductInfo> findByProperties(ProductInfo vo,int limit){
 		Example<ProductInfo> example=Example.of(vo);
 		return productInfoDao.findAll(example, PageRequest.of(0,limit)).getContent();
+	}
+
+	public long coutByProperties(ProductInfo vo){
+		Example<ProductInfo> example=Example.of(vo);
+		return productInfoDao.count(example);
 	}
 
 
