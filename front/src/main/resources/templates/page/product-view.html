@@ -11,6 +11,11 @@
     <div th:include="common/layout::js" th:remove="tag"></div>
     <link rel="stylesheet" th:href="@{~/pub/css/site.css}">
     <link rel="stylesheet" th:href="@{~/pub/css/directionReveal.css}">
+    <style>
+        .product-rg label.right-k{
+            top:0;
+        }
+    </style>
     <script>
         $(function(){
             var obj = new zoom('mask', 'bigimg','smallimg');
