@@ -13,8 +13,28 @@
 </head>
 
 <body>
-
-
+<div class="add-img">
+    <button  class="layui-btn layui-btn-sm layui-btn-normal left10"><i class="layui-icon">&#xe654;</i>增加图片</button>
+    <span class="red left5">*上传图片大小为1118*715</span>
+    <div class="layui-row">
+        <div class="layui-col-xs3">
+            <div class="grid-demo">
+                <div class="img-list">
+                    <h2>会议室</h2>
+                    <img th:src="@{~/pub/images/no-photo.jpg}">
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs3">
+            <div class="grid-demo">
+                <div class="img-list">
+                    <h2>走廊</h2>
+                    <img th:src="@{~/pub/images/no-photo.jpg}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     layui.use('upload', function(){
         var upload = layui.upload;

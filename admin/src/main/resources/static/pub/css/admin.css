@@ -166,3 +166,27 @@ input:-webkit-autofill {
 .layui-layout-admin .layui-footer{
     text-align: right;
 }
+.add-img{
+    padding: 20px 10px;
+}
+.img-list{
+    border:1px solid #dcdcdc;
+    position: relative;
+}
+.img-list img{
+    width: 100%;
+    position: relative;
+    top:0;
+    right: 0;
+}
+.img-list h2{
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 0;
+    padding: 5px 0;
+    text-align: center;
+    color:#000;
+    font-size: 14px;
+    background: rgba(0,0,0,0.3);
+}
