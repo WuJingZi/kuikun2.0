@@ -1265,14 +1265,14 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .carousel-indicators li {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
 }
 .carousel-indicators .active{
   background: #987a61;
   width: 22px;
-  height: 8px;
+  height: 6px;
   border-radius: 10px;
   margin-top: 1px;
 }
