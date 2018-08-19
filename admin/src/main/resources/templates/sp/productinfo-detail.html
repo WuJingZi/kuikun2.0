@@ -13,28 +13,34 @@
 </head>
 
 <body>
-<div class="add-img">
-    <button  class="layui-btn layui-btn-sm layui-btn-normal left10"><i class="layui-icon">&#xe654;</i>增加图片</button>
-    <span class="red left5">*上传图片大小为1118*715</span>
-    <div class="layui-row">
-        <div class="layui-col-xs3">
-            <div class="grid-demo">
-                <div class="img-list">
-                    <img th:src="@{~/pub/images/no-photo.jpg}">
-                    <input type="text" class="layui-input" value="编辑位置"/>
-                </div>
+<form id="submitForm" class="layui-form" th:action="@{~/productinfo/save}" method="post">
+    <div class="layui- top30 pd-rg50">
+        <div class="layui-form-item">
+            <label class="layui-form-label">名称：</label>
+            <div class="layui-input-block">
+                <input type="text" name="sname" th:value="${obj.sname}" lay-verify="title" class="layui-input">
+                <input type="hidden" name="id" th:value="${obj.id}"/>
+                <input type="hidden" name="sproductid" th:value="${obj.sproductid}">
+                <input name="simageurl" id="simageurl" type="hidden" th:value="${obj.simageurl}"/>
+                <input type="hidden" id="sfileid" th:value="${file!=null?file.id:''}" name="sfileid"/>
             </div>
         </div>
-        <div class="layui-col-xs3">
-            <div class="grid-demo">
-                <div class="img-list">
-                    <img th:src="@{~/pub/images/no-photo.jpg}">
-                    <input type="text" class="layui-input" value="编辑位置"/>
-                </div>
-            </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">图片:</label>
+            <button type="button" class="layui-btn" id="test1">
+                <i class="layui-icon">&#xe67c;</i>上传图片
+            </button>
+            <span class="red left5">*上传图片大小为1118*715</span>
         </div>
+
+
+
+
     </div>
-</div>
+
+
+</form>
+
 <script>
     layui.use('upload', function(){
         var upload = layui.upload;

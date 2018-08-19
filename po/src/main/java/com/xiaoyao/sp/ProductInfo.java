@@ -12,15 +12,45 @@ public class ProductInfo extends BaseEntity {
 
 
 	@Column(nullable = false)
+	private String sproductid;
+
+	@Column(nullable = false)
+
 	private String sname;
 
 	@Column(nullable = false)
 	private String simageurl;
 
 	@Column(nullable = false)
-	private String sprofiles;
+	private Integer isort;
 
 
+
+
+	public String getSproductid() {
+		return sproductid;
+	}
+
+	public ProductInfo setSproductid(String sproductid) {
+		this.sproductid = sproductid;
+		return this;
+	}
+
+	public String getSimageurl() {
+		return simageurl;
+	}
+
+	public void setSimageurl(String simageurl) {
+		this.simageurl = simageurl;
+	}
+
+	public Integer getIsort() {
+		return isort;
+	}
+
+	public void setIsort(Integer isort) {
+		this.isort = isort;
+	}
 
 	public String getSname() {
 		return sname;
@@ -28,14 +58,6 @@ public class ProductInfo extends BaseEntity {
 
 	public void setSname(String sname) {
 		this.sname = sname;
-	}
-
-	public String getSprofiles() {
-		return sprofiles;
-	}
-
-	public void setSprofiles(String sprofiles) {
-		this.sprofiles = sprofiles;
 	}
 
 }

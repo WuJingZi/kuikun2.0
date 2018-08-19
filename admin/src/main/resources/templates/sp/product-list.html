@@ -69,7 +69,7 @@
                         <div class="layui-btn-group">
                             <button onclick="edit($(this).attr('data-id'))" th:attr="data-id=${obj.id}"  class="layui-btn layui-btn-sm" title="编辑"><i class="layui-icon">&#xe642;</i></button>
                             <button onclick="del($(this).attr('data-id'))" th:attr="data-id=${obj.id}" class="layui-btn layui-btn-sm" title="删除"><i class="layui-icon">&#xe640;</i></button>
-                            <button onclick='openSubmit("配置详情","/product/info?productid="+$(this).attr("data-productid"),"800px","500px")' th:attr="data-productid=${obj.id}"  class="layui-btn layui-btn-sm" title="配置详情">详情</button>
+                            <button onclick='openSubmit("配置详情","/productinfo/list?productid="+$(this).attr("data-productid"),"800px","500px")' th:attr="data-productid=${obj.id}"  class="layui-btn layui-btn-sm" title="配置详情">详情</button>
                         </div>
 
 
