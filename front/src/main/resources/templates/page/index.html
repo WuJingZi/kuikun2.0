@@ -93,6 +93,7 @@
         <ol class="carousel-indicators">
             <li data-target="#main-slide" data-slide-to="0" class="active"></li>
             <li data-target="#main-slide" data-slide-to="1"></li>
+            <li data-target="#main-slide" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item" th:each="obj,index:${banners}" th:classappend="${index.first}?'active':''">
@@ -137,6 +138,7 @@
                         <!--<p class="white-bg">公模式带来转变<span>1/3工程施工</span></p>-->
                         <p class="mobile">以孜孜不倦的设计和交付，为人们的办公模式带来转变</p>
                     </div>
+                    <div class="doute hidden-xs"></div>
                 </div>
             </div>
             <!-- Add Pagination -->
