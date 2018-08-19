@@ -34,10 +34,10 @@
         <div class="layui-form-item">
             <label class="layui-form-label"></label>
             <!--<p class="img-con" ></p>-->
-            <div th:if="${banner.simageurl!=null}">
+            <div class="ban-img" th:if="${banner.simageurl!=null}">
                 <img id="previewimg" th:src="${banner.simageurl}" />
             </div>
-            <div th:if="${banner.simageurl==null}">
+            <div class="ban-img" th:if="${banner.simageurl==null}">
                 <img id="previewimg" th:src="@{~/pub/images/link-img1.png}" />
             </div>
         </div>
