@@ -1,7 +1,6 @@
 package com.xiaoyao.sp;
 
 import com.xiaoyao.product.ProductInfoService;
-import com.xiaoyao.product.ProductService;
 import com.xiaoyao.sys.File;
 import com.xiaoyao.sys.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
