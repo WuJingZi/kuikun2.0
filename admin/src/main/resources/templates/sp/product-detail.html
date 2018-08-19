@@ -40,9 +40,12 @@
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label"></label>
-            <p class="img-con">
-                <img src="../pub/images/no-photo.jpg">
-            </p>
+            <div class="ban-img" th:if="${product.simageurl!=null}">
+                <img id="previewimg" th:src="${product.simageurl}" />
+            </div>
+            <div class="ban-img" th:if="${product.simageurl==null}">
+                <img id="previewimg" th:src="@{~/pub/images/link-img1.png}" />
+            </div>
         </div>
 
 
@@ -64,6 +67,7 @@
                 if(res.success){
                     $("#sfileid").val(res.obj.id);
                     $("#simageurl").val(res.obj.surl);
+                    $("#previewimg").attr("src", res.obj.surl);
                     layer.msg("上传成功");
                 }else{
                     layer.msg("上传失败");
