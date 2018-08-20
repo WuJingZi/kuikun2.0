@@ -1,11 +1,9 @@
 package com.xiaoyao.sp;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.xiaoyao.product.ProductService;
 import com.xiaoyao.sys.File;
 import com.xiaoyao.sys.FileService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -88,11 +86,6 @@ public class ProductController {
 
 
 
-	@GetMapping("info")
-	public String info (@RequestParam(defaultValue = "") String productid, Model model){
-
-		return "sp/product-info";
-	}
 
 	
 	
