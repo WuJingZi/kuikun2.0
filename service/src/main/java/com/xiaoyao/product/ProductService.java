@@ -2,6 +2,8 @@ package com.xiaoyao.product;
 
 import com.xiaoyao.sp.Product;
 import com.xiaoyao.sp.ProductDao;
+import com.xiaoyao.sp.ProductInfo;
+import com.xiaoyao.sp.ProductInfoDao;
 import com.xiaoyao.sys.File;
 import com.xiaoyao.sys.FileDao;
 import com.xiaoyao.sys.FileService;
@@ -10,7 +12,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import sys.Log;
@@ -27,6 +28,10 @@ public class ProductService {
 	private FileService fileService;
 	@Autowired
 	private FileDao fileDao;
+	@Autowired
+	private ProductInfoDao productInfoDao;
+	@Autowired
+	private ProductInfoService productInfoService;
 
 	public Product findOne(String id){
 		return productDao.findById(id).orElse(null);
@@ -78,6 +83,11 @@ public class ProductService {
 	public void delete(String id){
 		try {
 			productDao.deleteById(id);
+
+			//删除子表
+			List<ProductInfo> productInfos= productInfoService.findByProperties(new ProductInfo().setSproductid(id));
+			productInfoDao.deleteAll(productInfos);
+
 		}catch (EmptyResultDataAccessException e){
 			Log.info("id为"+id+"记录不存在",this.getClass());
 			throw new ServiceException("记录不存在");

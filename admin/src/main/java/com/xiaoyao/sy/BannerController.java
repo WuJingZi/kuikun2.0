@@ -75,6 +75,7 @@ public class BannerController {
 
 	@GetMapping("delete")
 	public String delete (@RequestParam(defaultValue = "") String id, RedirectAttributes rmodel){
+		Banner banner=bannerService.findOne(id);
 		try {
 			bannerService.delete(id);
 			Msg.success(rmodel,"删除成功");
@@ -85,6 +86,7 @@ public class BannerController {
 			Msg.error(rmodel,"删除失败");
 			e.printStackTrace();
 		}
+		rmodel.addAttribute("type",banner.getItype());
 		return "redirect:list";
 	}
 

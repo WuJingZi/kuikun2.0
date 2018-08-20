@@ -10,6 +10,7 @@
     <link rel="stylesheet" th:href="@{~/pub/css/admin.css}"/>
     <div th:include="common/office::css" th:remove="tag"></div>
     <div th:include="common/office::js" th:remove="tag"></div>
+    <script th:include="common/msg::msg"></script>
     <script>
         function addPicture() {
             var picture="<div class=\"layui-col-xs3\" th:each=\"obj:${page}\">\n" +
@@ -27,6 +28,7 @@
 </head>
 
 <body>
+<sys th:if="${msg!=null}"><i th:id="systemMsg" th:attr="data-status=${msg.status}" th:text="${msg.msg}" hidden></i></sys>
 <div class="add-img">
     <button onclick="addPicture()"  class="layui-btn layui-btn-sm layui-btn-normal left10"><i class="layui-icon">&#xe654;</i>增加图片</button>
     <span class="red left5">*上传图片大小为1118*715</span>
@@ -36,7 +38,8 @@
                 <div class="img-list" th:attr="data-id=${obj.id}"  onclick="openSubmit('编辑','/productinfo/detail?id='+$(this).attr('data-id'),'500px','300px')">
                     <img th:src="${obj.simageurl}">
                 </div>
-                <p th:text="${obj.sname}"></p>
+                <p th:text="${obj.sname}"></p> <a th:href="@{~/productinfo/delete(id=${obj.id},productid=${obj.sproductid})}" class="layui-icon" style="position:  absolute;right: 18px;top: 17px;">&#xe640;</a>
+
             </div>
         </div>
         <div data-id="picture" hidden></div>

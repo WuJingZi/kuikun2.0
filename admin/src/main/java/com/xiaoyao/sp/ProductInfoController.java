@@ -68,7 +68,7 @@ public class ProductInfoController {
 
 
     @GetMapping("delete")
-    public String delete (@RequestParam(defaultValue = "") String id, RedirectAttributes rmodel){
+    public String delete (@RequestParam(defaultValue = "") String id,@RequestParam(defaultValue = "") String productid,RedirectAttributes rmodel){
 	    try {
             productInfoService.delete(id);
             Msg.success(rmodel,"删除成功");
@@ -79,6 +79,7 @@ public class ProductInfoController {
 	        Msg.error(rmodel,"删除失败");
 	        e.printStackTrace();
         }
+        rmodel.addAttribute("productid",productid);
         return "redirect:list";
     }
 

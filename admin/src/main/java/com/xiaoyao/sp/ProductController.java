@@ -70,6 +70,7 @@ public class ProductController {
 
     @GetMapping("delete")
     public String delete (@RequestParam(defaultValue = "") String id, RedirectAttributes rmodel){
+	    	Product product=productService.findOne(id);
 	    try {
             productService.delete(id);
             Msg.success(rmodel,"删除成功");
@@ -80,6 +81,7 @@ public class ProductController {
 	        Msg.error(rmodel,"删除失败");
 	        e.printStackTrace();
         }
+        rmodel.addAttribute("type",product.getItype());
         return "redirect:list";
     }
 

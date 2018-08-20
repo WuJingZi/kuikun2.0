@@ -86,6 +86,11 @@ public class ProductInfoService {
 		return productInfoDao.findAll(example, PageRequest.of(0,limit)).getContent();
 	}
 
+	public List<ProductInfo> findByProperties(ProductInfo vo){
+		Example<ProductInfo> example=Example.of(vo);
+		return productInfoDao.findAll(example);
+	}
+
 	public long coutByProperties(ProductInfo vo){
 		Example<ProductInfo> example=Example.of(vo);
 		return productInfoDao.count(example);

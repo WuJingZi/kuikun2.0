@@ -41,8 +41,9 @@ function openSubmit(title,url,width, height) {
 
             }});
         },
-        btn2:function (index,layero) {
+        end : function(index,layero) {
             location.reload();
         }
+
     });
 }
