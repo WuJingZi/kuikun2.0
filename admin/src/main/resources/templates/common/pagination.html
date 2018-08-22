@@ -5,42 +5,41 @@
 </head>
 <body th:fragment="pagination">
 
-
+    <if th:if="${page.totalPages ne 0}">
     <div id="page" class="align-mid">
         <div class="layui-box layui-laypage layui-laypage-default" id="layui-laypage-1">
-            <a id="prevfirst" href="javascript:;" class="layui-laypage-prev" data-page="2" onclick="lastPage(this)">上一页</a>
-            <!--<a href="javascript:;" data-page="1">1</a>-->
-            <!--<a href="javascript:;" data-page="2">2</a>-->
-            <!--<span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>3</em></span>-->
-            <!--<a href="javascript:;" data-page="4">4</a>-->
-            <!--<a href="javascript:;" data-page="5">5</a>-->
-            <!--<a href="javascript:;" class="layui-laypage-last" title="尾页" data-page="6">6</a>-->
-            <a href="javascript:;" class="layui-laypage-next" data-page="4" onclick="nextPage(this)">下一页</a>
+            <a id="prevfirst" href="javascript:;" class="layui-laypage-prev" data-page="" onclick="lastPage(this)">上一页</a>
+            <a href="javascript:;" class="layui-laypage-next" data-page="" onclick="nextPage(this)">下一页</a>
         </div>
     </div>
+    </if>
     <script>
 
         $(document).ready(function () {
-
             for(var i=[[${page.totalPages}]];i>0;i--){
-                var item='<a href="javascript:;" data-page="'+i+'">'+i+'</a>';
+                var item='<a href="javascript:;" data-page="'+i+'" onclick="jumpPage('+(i-1)+')">'+i;
+                if([[${page.number+1}]]==i){
+                    item='<span class="layui-laypage-curr"><em class="layui-laypage-em"></em><em>'+i+'</em></span>';
+                }
                 $("#prevfirst").after(item);
-                console.log(i);
             }
 
         });
 
+        function jumpPage(page) {
+            $('#searchForm').children("input[name='page']").val(page);
+            $('#searchForm').submit();
+        }
+
         function lastPage(obj) {
             if([[${!page.first}]]){
-                $('#searchForm').children("input[name='page']").val([[${page.number-1}]]);
-                $('#searchForm').submit();
+               return jumpPage([[${page.number-1}]]);
             }
         }
         
         function nextPage(obj) {
             if([[${!page.last}]]){
-                $('#searchForm').children("input[name='page']").val([[${page.number+1}]]);
-                $('#searchForm').submit();
+                return jumpPage([[${page.number+1}]]);
             }
         }
 
