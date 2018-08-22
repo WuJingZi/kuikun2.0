@@ -155,5 +155,14 @@ public class SQLiteDialect extends Dialect{
     public boolean supportsCascadeDelete() {
         return false;
     }
+
+    /**
+     * springboot2.0不重写这个方法分页有问题
+     * @return
+     */
+    @Override
+    public boolean bindLimitParametersInReverseOrder() {
+        return true;
+    }
 }
 
