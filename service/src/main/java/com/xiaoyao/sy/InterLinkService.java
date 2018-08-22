@@ -1,5 +1,7 @@
 package com.xiaoyao.sy;
 
+import com.xiaoyao.sys.BaseDao;
+import com.xiaoyao.sys.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -12,17 +14,22 @@ import sys.ServiceException;
 import java.util.List;
 
 @Component
-public class InterLinkService {
+public class InterLinkService extends BaseService<InterLink> {
 
 	@Autowired
 	private InterLinkDao interLinkDao;
 
-	public InterLink findOne(String id){
-		return interLinkDao.findById(id).orElse(null);
-	}
+//	public InterLink findOne(String id){
+//		return interLinkDao.findById(id).orElse(null);
+//	}
 
 	public List<InterLink> findAll(){
 		return interLinkDao.findAll();
+	}
+
+	@Override
+	protected BaseDao<InterLink, String> getBaseDao() {
+		return interLinkDao;
 	}
 
 	public void save(InterLink vo){
