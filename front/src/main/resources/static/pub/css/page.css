@@ -133,13 +133,13 @@
   padding:10px 0 5px 0;
   color:#89705a;
   margin: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 .thinkings .think-con .think-img p{
   color:#333;
   font-size: 14px;
   margin-bottom: 30px;
-  font-weight: 400;
+  font-weight: 300;
 }
 /*footer开始*/
 .footer{
@@ -324,7 +324,7 @@
   top:0;
 }
 .contact-part img.building{
-  width: 60%;
+  width: 56%;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -333,8 +333,12 @@
   font-size: 18px;
   padding-right: 12%;
 }
+.contact-part p:last-child{
+  margin-top: 8px;
+}
 .contact-part p.en{
   padding-left: 45px;
+  line-height: 1.8;
 }
 .contact-part p label{
   font-weight: normal;
