@@ -1,11 +1,14 @@
 package com.xiaoyao.sys;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
+import sys.Log;
+import sys.ServiceException;
 
 import java.util.List;
 
@@ -17,6 +20,9 @@ public abstract class BaseService<T> {
 
     public T findOne(String id) {
         return getBaseDao().findById(id).orElse(null);
+    }
+    public T findOne(@NonNull T searchVo) {
+        return getBaseDao().findOne(Example.of(searchVo)).orElse(null);
     }
 
     public List<T> findAll(){
@@ -46,6 +52,16 @@ public abstract class BaseService<T> {
 
     public List<T> findAllById(@NonNull T searchVo,@NonNull Sort sort){
         return getBaseDao().findAll(Example.of(searchVo),sort);
+    }
+
+
+    public void delete(String id){
+        try {
+            getBaseDao().deleteById(id);
+        }catch (EmptyResultDataAccessException e) {
+            Log.info("id为" + id + "记录不存在", this.getClass());
+            throw new ServiceException("记录不存在");
+        }
     }
 
 

@@ -5,10 +5,7 @@ import com.xiaoyao.product.ProductInfoService;
 import com.xiaoyao.product.ProductService;
 import com.xiaoyao.sp.Product;
 import com.xiaoyao.sp.ProductInfo;
-import com.xiaoyao.sy.Banner;
-import com.xiaoyao.sy.BannerService;
-import com.xiaoyao.sy.InterLink;
-import com.xiaoyao.sy.InterLinkService;
+import com.xiaoyao.sy.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +28,8 @@ public class IndexAction {
 	private InterLinkService interLinkService;
 	@Autowired
 	private ProductInfoService productInfoService;
+	@Autowired
+	private TtkService ttkService;
 
 
 	@GetMapping("index")
@@ -47,6 +46,10 @@ public class IndexAction {
 		//友情链接
 		List<InterLink> interLinks=interLinkService.findByProperty(new InterLink(),20);
 		model.addAttribute("interLinks",interLinks);
+
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(10));
+		model.addAttribute("ttk",ttk);
 		return  "page/index";
 	}
 

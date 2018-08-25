@@ -3,7 +3,6 @@ package com.xiaoyao.sy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,41 +14,40 @@ import sys.Result;
 import sys.ServiceException;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
-@RequestMapping("/interlink/")
-public class InterLinkController {
+@RequestMapping("/ttk/")
+public class TtkController {
 
 
 	@Autowired
-	private InterLinkService interLinkService;
+	private TtkService ttkService;
 
 
 
 	@RequestMapping("list")
-	public String list (Model model , @PageableDefault(value = 10,page = 0,sort = { "isort" }, direction = Sort.Direction.DESC) Pageable pageable, @RequestParam(defaultValue = "0") int type){
-		Page<InterLink> list=interLinkService.findAll(pageable);
+	public String list (Model model , @PageableDefault(value = 10,page = 0) Pageable pageable, @RequestParam(defaultValue = "0") int type){
+		Page<Ttk> list=ttkService.findAll(pageable);
 		model.addAttribute("page",list);
-		return "sy/interlink-list";
+		return "sy/ttk-list";
 	}
 
 	@GetMapping("detail")
-	public String detail (@RequestParam(defaultValue = "") String id,@RequestParam(defaultValue = "0") int type, Model model){
-		InterLink interLink=interLinkService.findOne(id);
-		if(interLink==null) {
-			interLink = new InterLink();
+	public String detail (@RequestParam(defaultValue = "") String id,@RequestParam(defaultValue = "10") int itype, Model model){
+		Ttk ttk=ttkService.findOne(id);
+		if(ttk==null) {
+			ttk = new Ttk();
+			ttk.setItype(itype);
 		}
-		model.addAttribute("interLink",interLink);
-
-		return "sy/interlink-detail";
+		model.addAttribute("ttk",ttk);
+		return "sy/ttk-detail";
 	}
 
 	@PostMapping("save")
 	@ResponseBody
-	public Result save(@Valid InterLink interLink, BindingResult bindingResult, RedirectAttributes rmodel){
+	public Result save(@Valid Ttk ttk, BindingResult bindingResult, RedirectAttributes rmodel){
 		try {
-			interLinkService.save(interLink);
+			ttkService.save(ttk);
 			return Result.success(rmodel,"保存成功");
 		}catch (ServiceException e){
 			return Result.failing(e.getMessage());
@@ -64,7 +62,7 @@ public class InterLinkController {
 	@GetMapping("delete")
 	public String delete (@RequestParam(defaultValue = "") String id, RedirectAttributes rmodel){
 		try {
-			interLinkService.delete(id);
+			ttkService.delete(id);
 			Msg.success(rmodel,"删除成功");
 		}catch (ServiceException e){
 			e.printStackTrace();
