@@ -1,18 +1,14 @@
 package com.xiaoyao.index;
 
-import com.xiaoyao.hy.UserService;
 import com.xiaoyao.product.ProductInfoService;
 import com.xiaoyao.product.ProductService;
 import com.xiaoyao.sp.Product;
 import com.xiaoyao.sp.ProductInfo;
 import com.xiaoyao.sy.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -64,6 +60,10 @@ public class IndexAction {
 		model.addAttribute("shangye",shangye);
 		model.addAttribute("canyin",canyin);
 		model.addAttribute("jiudian",jiudian);
+
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(40));
+		model.addAttribute("ttk",ttk);
 		return  "page/product";
 	}
 
@@ -71,27 +71,45 @@ public class IndexAction {
 	public String productView(@RequestParam(defaultValue = "") String productid,Model model){
 		List<ProductInfo> productInfos=productInfoService.findByProperties(new ProductInfo().setSproductid(productid),6);
 		model.addAttribute("productInfos",productInfos);
+
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(40));
+		model.addAttribute("ttk",ttk);
 		return  "page/product-view";
 	}
 
 	@GetMapping("serve")
-	public String serve(){
+	public String serve(Model model){
+
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(30));
+		model.addAttribute("ttk",ttk);
 		return  "page/serve";
 	}
 
 	@GetMapping("idea")
-	public String idea(){
+	public String idea(Model model){
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(50));
+		model.addAttribute("ttk",ttk);
 		return  "page/idea";
 	}
 
 
 	@GetMapping("about")
-	public String about(){
+	public String about(Model model){
+
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(20));
+		model.addAttribute("ttk",ttk);
 		return  "page/about";
 	}
 
 	@GetMapping("contact")
-	public String contact(){
+	public String contact(Model model){
+		//TTK
+		Ttk ttk=ttkService.findOne(new Ttk().setItype(60));
+		model.addAttribute("ttk",ttk);
 		return  "page/contact";
 	}
 
