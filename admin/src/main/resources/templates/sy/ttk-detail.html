@@ -15,8 +15,9 @@
 <body>
 <form id="submitForm" class="layui-form" th:action="@{~/ttk/save}" method="post">
     <div class="layui- top30 pd-rg50">
+        <div class="layui-form-item red pd-le50">*多个关键词用逗号隔开</div>
         <div class="layui-form-item">
-            <label class="layui-form-label">关键词（多个关键词用逗号隔开）:</label>
+            <label class="layui-form-label">关键词:</label>
             <div class="layui-input-block">
                 <input type="text" name="skeywords" th:value="${ttk.skeywords}" maxlength="100" lay-verify="required"  class="layui-input">
                 <input type="hidden" name="id" th:value="${ttk.id}">
@@ -26,7 +27,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">描述:</label>
             <div class="layui-input-block">
-                <textarea  name="sdescription" th:text="${ttk.sdescription}" maxlength="100" lay-verify="required"  class="layui-input"></textarea>
+                <textarea  name="sdescription" th:text="${ttk.sdescription}" maxlength="100" lay-verify="required"  class="layui-input pd-top10" style="min-height: 80px"></textarea>
             </div>
         </div>
 

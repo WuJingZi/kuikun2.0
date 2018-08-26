@@ -43,8 +43,15 @@
 .pd15{
   padding: 15px;
 }
+.pd-top10{
+  padding-top: 10px;
+}
 .pd-rg50{
   padding-right: 50px;
+}
+.pd-le50{
+  padding-left: 110px;
+  margin-bottom: 5px;
 }
 .layui-nav-tree .layui-nav-child a {
   padding-left: 40px;
