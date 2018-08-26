@@ -1,22 +1,13 @@
 package com.xiaoyao.sy;
 
-import com.xiaoyao.sys.File;
-import com.xiaoyao.sys.FileDao;
-import com.xiaoyao.sys.FileService;
+import com.xiaoyao.sys.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-import sys.Log;
 import sys.ServiceException;
 
-import java.util.List;
-
 @Component
-public class BannerService {
+public class BannerService extends BaseService<Banner>{
 
 	@Autowired
 	private BannerDao bannerDao;
@@ -25,12 +16,10 @@ public class BannerService {
 	@Autowired
 	private FileDao fileDao;
 
-	public Banner findOne(String id){
-		return bannerDao.findById(id).orElse(null);
-	}
 
-	public Page<Banner> findAll(Pageable pageable){
-		return bannerDao.findAll(pageable);
+	@Override
+	protected BaseDao<Banner, String> getBaseDao() {
+		return bannerDao;
 	}
 
 	public void save(Banner vo, String fileid){
@@ -61,31 +50,9 @@ public class BannerService {
 	}
 
 
-	public List<Banner> listPage(int page,int type){
-		Banner product =new Banner();
-		product.setItype(type);
-		Example<Banner> example=Example.of(product);
-
-		return bannerDao.findAll(example);
-	}
-
-
-	public void delete(String id){
-		try {
-			bannerDao.deleteById(id);
-		}catch (EmptyResultDataAccessException e){
-			Log.info("id为"+id+"记录不存在",this.getClass());
-			throw new ServiceException("记录不存在");
-		}
-	}
 
 
 
-
-
-	public List<Banner> findTop4ByItype(Integer itype){
-		return bannerDao.findTop4ByItype(itype);
-	}
 
 
 }

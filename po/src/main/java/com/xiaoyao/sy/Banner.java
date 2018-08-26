@@ -44,8 +44,9 @@ public class Banner extends BaseEntity {
 		return itype;
 	}
 
-	public void setItype(Integer itype) {
+	public Banner setItype(Integer itype) {
 		this.itype = itype;
+		return this;
 	}
 
 	public String getSimageurl() {

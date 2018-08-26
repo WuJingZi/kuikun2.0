@@ -32,10 +32,10 @@ public class IndexAction {
 	public String index(Model model){
 
 		//banner
-		List<Banner> banners=bannerService.findTop4ByItype(10);
+		List<Banner> banners=bannerService.findAllLimit(new Banner().setItype(10),4);
 
 		//工程展示
-		List<Banner> gongchengs=bannerService.findTop4ByItype(20);
+		List<Banner> gongchengs=bannerService.findAllLimit(new Banner().setItype(20),4);
 		model.addAttribute("banners",banners);
 		model.addAttribute("gongchengs",gongchengs);
 

@@ -1,10 +1,7 @@
 package com.xiaoyao.sys;
 
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import sys.Log;
@@ -38,6 +35,14 @@ public abstract class BaseService<T> {
         return getBaseDao().findAll(Example.of(searchVo));
     };
 
+    public List<T> findAllLimit(int size){
+        return getBaseDao().findAll(PageRequest.of(0,size)).getContent();
+    }
+
+    public List<T> findAllLimit(@NonNull T searchVo,int size){
+        return getBaseDao().findAll(Example.of(searchVo),PageRequest.of(0,size)).getContent();
+    }
+
     public Page<T> findAll(@NonNull Pageable pageable){
         return getBaseDao().findAll(pageable);
     };
@@ -50,7 +55,7 @@ public abstract class BaseService<T> {
         return getBaseDao().findAllById(ids);
     }
 
-    public List<T> findAllById(@NonNull T searchVo,@NonNull Sort sort){
+    public List<T> findAll(@NonNull T searchVo,@NonNull Sort sort){
         return getBaseDao().findAll(Example.of(searchVo),sort);
     }
 

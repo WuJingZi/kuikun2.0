@@ -1,14 +1,14 @@
 package com.xiaoyao.sy;
 
+import com.xiaoyao.sys.BaseDao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.List;
 
-public interface BannerDao extends JpaRepository<Banner,String>,JpaSpecificationExecutor<Banner>{
+public interface BannerDao extends BaseDao<Banner,String>{
 
 
-	List<Banner> findTop4ByItype(Integer itype);
 
 
 
