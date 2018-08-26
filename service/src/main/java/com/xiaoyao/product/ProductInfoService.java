@@ -74,6 +74,8 @@ public class ProductInfoService {
 	public void delete(String id){
 		try {
 			productInfoDao.deleteById(id);
+			//删除ftp上的图片
+			fileService.deleteBybillid(id);
 		}catch (EmptyResultDataAccessException e){
 			Log.info("id为"+id+"记录不存在",this.getClass());
 			throw new ServiceException("记录不存在");

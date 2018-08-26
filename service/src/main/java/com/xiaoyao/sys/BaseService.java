@@ -4,12 +4,13 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.*;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import sys.Log;
 import sys.ServiceException;
 
 import java.util.List;
 
-@Component
+@Service
 public abstract class BaseService<T> {
 
 

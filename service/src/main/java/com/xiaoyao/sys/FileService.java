@@ -2,19 +2,25 @@ package com.xiaoyao.sys;
 
 import http.FtpUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import sys.ServiceException;
 
 import java.util.Date;
 import java.util.List;
 
-@Component
-public class FileService {
+@Service
+@Transactional
+public class FileService extends BaseService<File>{
 	
 	@Autowired
 	private FileDao fileDao;
 
+	@Override
+	protected BaseDao<File, String> getBaseDao() {
+		return fileDao;
+	}
 
 	public File save(MultipartFile multipartFile){
 		File file=new File();
@@ -23,13 +29,15 @@ public class FileService {
 		file.setSurl("");
 		file.setSbillid("");
 		file.setDadddate(new Date().toLocaleString());
+		file.setSextension(new StringBuffer(".").append(multipartFile.getOriginalFilename().split("\\.")[1]).toString());
 		file= fileDao.save(file);
 
-		file.setSname(new StringBuffer(file.getId()).append(".").append(multipartFile.getOriginalFilename().split("\\.")[1]).toString());
+		file.setSname(new StringBuffer(file.getId()).append(file.getSextension()).toString());
 		String url=new String();
 		try {
 			url= FtpUtils.upload(multipartFile,file.getSname());
 		}catch (Exception e){
+			e.printStackTrace();
 			throw new ServiceException(e.getMessage());
 		}
 		file.setSurl(url);
@@ -37,9 +45,6 @@ public class FileService {
 		return file;
 	}
 
-	public File findOne(String id) {
-		 return fileDao.findById(id).orElse(null);
-	}
 
 	public File findOneByBillid(String sbillid){
 		List<File> files= fileDao.findBySbillid(sbillid);
@@ -48,4 +53,16 @@ public class FileService {
 		}
 		return null;
 	}
+
+
+	public void deleteBybillid(String billid){
+		List<File> files=fileDao.findBySbillid(billid);
+		files.forEach(file -> {
+			//删除ftp上的文件
+			FtpUtils.delete(file.getSname());
+			fileDao.deleteAll(files);
+		});
+	}
+
+
 }

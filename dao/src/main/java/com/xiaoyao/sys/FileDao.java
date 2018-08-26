@@ -1,10 +1,8 @@
 package com.xiaoyao.sys;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 
-public interface FileDao extends JpaRepository<File,String> {
+public interface FileDao extends BaseDao<File,String> {
 
 
     List<File> findBySbillid(String billid);

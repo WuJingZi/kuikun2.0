@@ -26,6 +26,9 @@ public class File extends BaseEntity {
 	@Column(nullable = false)
 	private String dadddate;
 
+	@Column(nullable = false)
+	private String sextension;  //扩展名
+
 
 	public String getSname() {
 		return sname;
@@ -65,5 +68,13 @@ public class File extends BaseEntity {
 
 	public void setDadddate(String dadddate) {
 		this.dadddate = dadddate;
+	}
+
+	public String getSextension() {
+		return sextension;
+	}
+
+	public void setSextension(String sextension) {
+		this.sextension = sextension;
 	}
 }

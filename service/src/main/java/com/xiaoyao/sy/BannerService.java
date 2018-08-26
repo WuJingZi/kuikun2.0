@@ -50,9 +50,9 @@ public class BannerService extends BaseService<Banner>{
 	}
 
 
-
-
-
-
-
+	@Override
+	public void delete(String id) {
+		fileService.deleteBybillid(id);
+		super.delete(id);
+	}
 }

@@ -1,6 +1,7 @@
 package http;
 
 import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPReply;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
 import org.springframework.web.multipart.MultipartFile;
 import sys.ServiceException;
@@ -25,17 +26,47 @@ public class FtpUtils {
 	private static String yunUrl="http://xy-studio.cn:8080/";
 
 
+	private static FTPClient ftpClient =null;
+
+
+	/**
+	 * <p>ftp登录</p>
+	 */
+	public static void login(){
+		ftpClient = new FTPClient();
+		try{
+			ftpClient.connect(ftpUrl,port);
+			ftpClient.login(userName, password);
+			//检测连接是否成功
+			int reply = ftpClient.getReplyCode();
+			if(!FTPReply.isPositiveCompletion(reply)) {
+				close();
+			}
+		}catch(Exception ex){
+			ex.printStackTrace();
+			//关闭
+			close();
+		}
+	}
+
+	private static void close(){
+		try {
+			ftpClient.disconnect();
+		} catch (IOException e) {
+			throw new ServiceException("关闭ftp异常");
+		}
+	}
+
+
 	/**
 	 * ftp上传单个文件
 	 * @param fileName 要上传的文件全路径名
 	 * @throws IOException
 	 */
 	public static String upload(MultipartFile multipartFile, String fileName) throws IOException {
-		FTPClient ftpClient = new FTPClient();
 		InputStream localFileStream = null;
 		try {
-			ftpClient.connect(ftpUrl,port);
-			ftpClient.login(userName, password);
+			login();
 			ftpClient.enterLocalPassiveMode();
 			localFileStream =multipartFile.getInputStream();
 // 设置上传目录
@@ -57,11 +88,27 @@ public class FtpUtils {
 			throw new IOException(e);
 		} finally {
 			IOUtils.closeQuietly(localFileStream);
-			try {
-				ftpClient.disconnect();
-			} catch (IOException e) {
-				throw new ServiceException("关闭ftp异常");
+			close();
+		}
+	}
+
+
+	/**
+	 * 删除文件
+	 * @param filename
+	 */
+	public static void delete(String filename){
+		try {
+			login();
+			if (ftpClient != null) {
+				filename=new StringBuffer(dir).append(filename).toString();
+				if (!ftpClient.deleteFile(filename)) {
+					throw new ServiceException("文件删除失败");
+				}
 			}
+		}catch (IOException e){
+			e.printStackTrace();
+			throw new ServiceException("文件删除失败");
 		}
 	}
 }
