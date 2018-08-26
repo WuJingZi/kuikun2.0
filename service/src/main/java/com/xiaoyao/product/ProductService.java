@@ -58,6 +58,7 @@ public class ProductService extends BaseService<Product>{
 		product.setItype(vo.getItype());
 		product.setSimageurl(file.getSurl());
 		product.setIsshow(vo.getIsshow()==null?1:vo.getIsshow());
+		product.setSalt(vo.getSalt());
 		productDao.save(product);
 
 		file.setSbillid(product.getId());

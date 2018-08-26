@@ -15,15 +15,15 @@
 <body>
 <form id="submitForm" class="layui-form" th:action="@{~/banner/save}" method="post">
     <div class="layui- top30 pd-rg50">
-        <!--<div class="layui-form-item">-->
-            <!--<label class="layui-form-label">简介:</label>-->
-            <!--<div class="layui-input-block">-->
-                <!--<textarea name="sprofiles" th:text="${banner.sprofiles}" placeholder="请输入banner简介" class="layui-textarea"></textarea>-->
+        <div class="layui-form-item">
+            <label class="layui-form-label">Alt:</label>
+            <div class="layui-input-block">
+                <input name="salt" th:value="${banner.salt}"  class="layui-input"></input>
                 <input type="hidden" name="id" th:value="${banner.id}">
                 <input type="hidden" id="sfileid" th:value="${file!=null?file.id:''}" name="sfileid"/>
                 <input type="hidden" name="itype" value="10"/>
-            <!--</div>-->
-        <!--</div>-->
+            </div>
+        </div>
         <div class="layui-form-item">
             <label class="layui-form-label">图片:</label>
             <button type="button" class="layui-btn" id="test1">

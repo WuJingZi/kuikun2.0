@@ -27,6 +27,9 @@ public class Product extends BaseEntity {
 	@Column(nullable = false)
 	private Integer isshow;
 
+	@Column(nullable = false)
+	private String salt;
+
 
 	public String getSname() {
 		return sname;
@@ -74,5 +77,13 @@ public class Product extends BaseEntity {
 
 	public void setIsshow(Integer isshow) {
 		this.isshow = isshow;
+	}
+
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
 	}
 }

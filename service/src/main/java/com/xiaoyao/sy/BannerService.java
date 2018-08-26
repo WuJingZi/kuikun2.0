@@ -43,6 +43,7 @@ public class BannerService extends BaseService<Banner>{
 		product.setSprofiles(vo.getSprofiles());
 		product.setItype(vo.getItype());
 		product.setSimageurl(file.getSurl());
+		product.setSalt(StringUtils.isBlank(vo.getSalt())?"":vo.getSalt());
 		product.setIsshow(vo.getIsshow()==null?1:vo.getIsshow());
 		bannerDao.save(product);
 
