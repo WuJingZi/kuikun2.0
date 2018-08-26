@@ -26,6 +26,12 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">Alt:</label>
+            <div class="layui-input-block">
+                <input type="text" name="salt" th:value="${obj.salt}" lay-verify="required"  class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
             <label class="layui-form-label">图片:</label>
             <button type="button" class="layui-btn" id="test1">
                 <i class="layui-icon">&#xe67c;</i>上传图片

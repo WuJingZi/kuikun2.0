@@ -64,6 +64,7 @@ public class ProductInfoService {
 		productInfo.setSname(vo.getSname());
 		productInfo.setSimageurl(file.getSurl());
 		productInfo.setIsort(0);
+		productInfo.setSalt(StringUtils.isBlank(vo.getSalt())?"":vo.getSalt());
 		productInfoDao.save(productInfo);
 
 		file.setSbillid(productInfo.getId());

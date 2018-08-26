@@ -24,6 +24,9 @@ public class ProductInfo extends BaseEntity {
 	@Column(nullable = false)
 	private Integer isort;
 
+	@Column(nullable = false)
+	private String salt;
+
 
 
 
@@ -60,4 +63,11 @@ public class ProductInfo extends BaseEntity {
 		this.sname = sname;
 	}
 
+	public String getSalt() {
+		return salt;
+	}
+
+	public void setSalt(String salt) {
+		this.salt = salt;
+	}
 }
