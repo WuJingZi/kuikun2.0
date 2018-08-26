@@ -40,7 +40,7 @@ public class IndexAction {
 		model.addAttribute("gongchengs",gongchengs);
 
 		//友情链接
-		List<InterLink> interLinks=interLinkService.findByProperty(new InterLink(),20);
+		List<InterLink> interLinks=interLinkService.findAllLimit(20);
 		model.addAttribute("interLinks",interLinks);
 
 		//TTK

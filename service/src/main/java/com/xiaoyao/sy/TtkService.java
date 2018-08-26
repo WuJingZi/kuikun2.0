@@ -4,10 +4,12 @@ import com.xiaoyao.sys.BaseDao;
 import com.xiaoyao.sys.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sys.ServiceException;
 
-@Component
+@Service
+@Transactional
 public class TtkService extends BaseService<Ttk>{
 
 	@Autowired

@@ -12,13 +12,15 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sys.Log;
 import sys.ServiceException;
 
 import java.util.List;
 
-@Component
+@Service
+@Transactional
 public class ProductInfoService {
 
 	@Autowired

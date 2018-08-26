@@ -3,10 +3,12 @@ package com.xiaoyao.sy;
 import com.xiaoyao.sys.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sys.ServiceException;
 
-@Component
+@Service
+@Transactional
 public class BannerService extends BaseService<Banner>{
 
 	@Autowired

@@ -4,24 +4,19 @@ import com.xiaoyao.sys.BaseDao;
 import com.xiaoyao.sys.BaseService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Component;
-import sys.Log;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import sys.ServiceException;
 
 import java.util.List;
 
-@Component
+@Service
+@Transactional
 public class InterLinkService extends BaseService<InterLink> {
 
 	@Autowired
 	private InterLinkDao interLinkDao;
 
-//	public InterLink findOne(String id){
-//		return interLinkDao.findById(id).orElse(null);
-//	}
 
 	public List<InterLink> findAll(){
 		return interLinkDao.findAll();
@@ -59,21 +54,7 @@ public class InterLinkService extends BaseService<InterLink> {
 	}
 
 
-	public List<InterLink> findByProperty(InterLink vo,int limit){
-		Example<InterLink> example=Example.of(vo);
 
-		return interLinkDao.findAll(example, PageRequest.of(0,limit)).getContent();
-	}
-
-
-	public void delete(String id){
-		try {
-			interLinkDao.deleteById(id);
-		}catch (EmptyResultDataAccessException e){
-			Log.info("id为"+id+"记录不存在",this.getClass());
-			throw new ServiceException("记录不存在");
-		}
-	}
 
 
 
