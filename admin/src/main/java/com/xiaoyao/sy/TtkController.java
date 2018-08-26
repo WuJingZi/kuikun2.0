@@ -26,7 +26,7 @@ public class TtkController {
 
 
 	@RequestMapping("list")
-	public String list (Model model , @PageableDefault(value = 10,page = 0) Pageable pageable, @RequestParam(defaultValue = "0") int type){
+	public String list (Model model , @PageableDefault(value = 10,page = 0) Pageable pageable){
 		Page<Ttk> list=ttkService.findAll(pageable);
 		model.addAttribute("page",list);
 		return "sy/ttk-list";

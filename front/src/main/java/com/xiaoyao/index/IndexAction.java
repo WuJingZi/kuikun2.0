@@ -52,10 +52,10 @@ public class IndexAction {
 
 	@GetMapping("product")
 	public String product(Model  model){
-		List<Product> changfang= productService.findProductForHome(10);
-		List<Product> shangye= productService.findProductForHome(20);
-		List<Product> canyin= productService.findProductForHome(30);
-		List<Product> jiudian= productService.findProductForHome(40);
+		List<Product> changfang= productService.findAllLimit(new Product().setItype(10),6);
+		List<Product> shangye= productService.findAllLimit(new Product().setItype(20),6);
+		List<Product> canyin= productService.findAllLimit(new Product().setItype(30),6);
+		List<Product> jiudian= productService.findAllLimit(new Product().setItype(40),6);
 		model.addAttribute("changfang",changfang);
 		model.addAttribute("shangye",shangye);
 		model.addAttribute("canyin",canyin);

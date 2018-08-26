@@ -55,8 +55,9 @@ public class Product extends BaseEntity {
 		return itype;
 	}
 
-	public void setItype(Integer itype) {
+	public Product setItype(Integer itype) {
 		this.itype = itype;
+		return this;
 	}
 
 	public String getSimageurl() {

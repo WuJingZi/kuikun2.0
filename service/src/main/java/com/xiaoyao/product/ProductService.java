@@ -4,9 +4,7 @@ import com.xiaoyao.sp.Product;
 import com.xiaoyao.sp.ProductDao;
 import com.xiaoyao.sp.ProductInfo;
 import com.xiaoyao.sp.ProductInfoDao;
-import com.xiaoyao.sys.File;
-import com.xiaoyao.sys.FileDao;
-import com.xiaoyao.sys.FileService;
+import com.xiaoyao.sys.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -20,7 +18,7 @@ import sys.ServiceException;
 import java.util.List;
 
 @Component
-public class ProductService {
+public class ProductService extends BaseService<Product>{
 
 	@Autowired
 	private ProductDao productDao;
@@ -33,12 +31,10 @@ public class ProductService {
 	@Autowired
 	private ProductInfoService productInfoService;
 
-	public Product findOne(String id){
-		return productDao.findById(id).orElse(null);
-	}
 
-	public Page<Product> findAll(Pageable pageable){
-		return productDao.findAll(pageable);
+	@Override
+	protected BaseDao<Product, String> getBaseDao() {
+		return productDao;
 	}
 
 	public void save(Product vo, String fileid){
@@ -71,18 +67,12 @@ public class ProductService {
 	}
 
 
-	public List<Product> listPage(int page,int type){
-		Product product =new Product();
-		product.setItype(type);
-		Example<Product> example=Example.of(product);
-
-		return productDao.findAll(example);
-	}
-
-
+	@Override
 	public void delete(String id){
 		try {
 			productDao.deleteById(id);
+
+			//删除文件
 
 			//删除子表
 			List<ProductInfo> productInfos= productInfoService.findByProperties(new ProductInfo().setSproductid(id));
@@ -98,9 +88,6 @@ public class ProductService {
 
 
 
-	public List<Product> findProductForHome(Integer itype){
-		return productDao.findTop6ByItype(itype);
-	}
 
 
 }
