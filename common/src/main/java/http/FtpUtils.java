@@ -102,8 +102,10 @@ public class FtpUtils {
 			login();
 			if (ftpClient != null) {
 				filename=new StringBuffer(dir).append(filename).toString();
-				if (!ftpClient.deleteFile(filename)) {
-					throw new ServiceException("文件删除失败");
+				if(ftpClient.listNames(filename).length>0) {
+					if (!ftpClient.deleteFile(filename)) {
+						throw new ServiceException("文件删除失败");
+					}
 				}
 			}
 		}catch (IOException e){

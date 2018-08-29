@@ -60,8 +60,8 @@ public class FileService extends BaseService<File>{
 		files.forEach(file -> {
 			//删除ftp上的文件
 			FtpUtils.delete(file.getSname());
-			fileDao.deleteAll(files);
 		});
+		fileDao.deleteAll(files);
 	}
 
 
