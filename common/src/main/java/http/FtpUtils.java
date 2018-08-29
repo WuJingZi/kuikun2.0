@@ -23,7 +23,7 @@ public class FtpUtils {
 
 	private static int port=21;
 
-	private static String yunUrl="http://xy-studio.cn:8080/";
+	private static String yunUrl="http://xy-studio.cn:8080/kuikun/";
 
 
 	private static FTPClient ftpClient =null;
