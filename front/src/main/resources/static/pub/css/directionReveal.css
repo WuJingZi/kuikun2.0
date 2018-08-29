@@ -587,6 +587,7 @@
     border: 10px solid transparent;
     border-bottom: none;
     border-top: none;
+    border-right: none;
 }
 
 .direction-reveal--3-grid-cssgrid {

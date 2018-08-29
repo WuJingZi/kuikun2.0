@@ -8,7 +8,7 @@
   right: 0;
 }
 .carousel .ban-intro .block{
-  width: 32%;
+  width: 38%;
   background: rgba(255,255,255,0.7);
   padding: 22px 30px;
   box-sizing: border-box;
@@ -176,16 +176,21 @@
 /*案例开始*/
 .page{
   margin-bottom: 50px;
+  margin-top: 18px;
 }
 .product-le{
   padding:20px 12px 0 0;
 }
 .product-le img{
-  width: 100%;
+  width: 92.5%;
 }
 .product-rg{
   position: relative;
   padding-right: 80px;
+}
+.product-rg-real{
+  padding-left: 20px;
+  padding-right: 138px;
 }
 .product-rg label.right-k{
   position: absolute;
@@ -194,7 +199,10 @@
   width:10px;
   bottom: 0;
   background: #987a61;
-  min-height: 460px;
+  /*min-height: 460px;*/
+}
+.product-rg-diff label.right-k{
+  top:20px
 }
 .navbar-child{
   position: relative;
@@ -209,6 +217,7 @@
   overflow: auto;
   z-index: 10;
   background: #fff;
+  padding-bottom: 35px;
 }
 .product-tab ul {
   white-space: nowrap;
@@ -222,8 +231,9 @@
   background: #aaaaaa;
   color: #fff;
   font-size: 16px;
-  min-width: 136px;
+  min-width: 130px;
   text-align: center;
+  margin-right: 5px;
 }
 .product-tab ul li.active{
   background: #333333;
@@ -270,6 +280,7 @@
 .direction-reveal__card p{
   color: #999;
   font-size: 14px;
+  margin-bottom: 5px;
 }
 .view-top{
   margin-top: 20px;
@@ -282,18 +293,18 @@
 }
 /*服务*/
 .serve-list{
-  padding-left: 20px;
+  /*padding-left: 20px;*/
 }
 .serve-list h2{
   font-size: 18px;
   color:#333;
-  margin: 15px 0 20px 0;
+  margin: 15px 0 15px 0;
 }
 .serve-list p{
   font-size: 15px;
   color: #333;
   line-height: 1.8;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 /*理念*/
 .idea-list{
@@ -304,26 +315,30 @@
 }
 .idea-list p{
   color:#333;
-  margin: 0 0 15px 0;
+  margin: 0 0 25px 0;
   font-size: 16px;
+  line-height: 1.8;
 }
 .idea .product-rg label.right-k{
-  top:30px;
-  min-height: 460px;
+  top:20px;
 }
 .about-word{
   margin-top: 15px;
 }
 .about-word p{
   color: #333;
-  margin: 0 0 15px 0;
+  margin: 0 0 25px 0;
   font-size: 16px;
+  line-height: 1.8;
 }
 .about .product-rg label.right-k{
   top:0;
 }
+.contact .product-rg label.right-k{
+  top:20px;
+}
 .contact-part img.building{
-  width: 56%;
+  width:42%;
   margin-bottom: 20px;
   margin-top: 20px;
 }
@@ -359,7 +374,67 @@
 @media (min-width: 1800px){
   .thinkings .think-con .word h2{
     padding: 120px 0 10px 0;
-    font-size: 40px;
+    font-size: 46px;
+  }
+  .contact-part img.building{
+    margin-bottom: 30px;
+    width: 46%;
+  }
+  .contact-part p.diff,.contact-part p.en{
+    margin-bottom: 10px;
+  }
+  .contact-part img.code{
+    margin-top: 20px;
+  }
+  .serve-list h2 {
+    margin: 15px 0 25px 0;
+  }
+  .carousel .ban-intro .block{
+    width:32%;
+  }
+  .feature{
+    height:860px;
+  }
+  .feature .swiper-container {
+    height: 860px;
+  }
+  .feature .swiper-slide .doute{
+    height:82px;
+  }
+  .feature .swiper-slide .cover p {
+    color: #333;
+    font-size: 46px;
+    line-height: 1.4;
+    width: 80%;
+  }
+  .feature .swiper-slide .cover h2 span{
+    font-size: 18px;
+  }
+  .feature .swiper-slide .cover h2{
+    height:80px;
+  }
+  .thinkings .think-con {
+    padding-left: 80px;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 0px 25px;
+  }
+  .product-rg {
+    padding-right: 110px;
+  }
+  .serve-list p {
+    line-height: 2.2;
+    font-size: 16px;
+  }
+  .idea-list p{
+    line-height: 2;
+    font-size: 18px;
+    margin: 0 0 20px 0;
+  }
+  .about-word p{
+    line-height: 2;
+    font-size: 18px;
+    margin: 0 0 20px 0;
   }
 }
 @media screen and (max-width: 1399px){

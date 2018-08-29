@@ -32,7 +32,6 @@
             currentClass: 'active'
     });
     gao = $("#demo").height();
-    console.log(gao);
     $("#lg").height(gao+'px');
   });      
 
