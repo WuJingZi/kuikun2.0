@@ -641,8 +641,8 @@
     margin-bottom: 10px;
   }
   .product-tab ul li {
-    min-width: 110px;
-    padding: 2px 15px;
+    min-width: 85px;
+    padding: 2px 8px;
     font-size: 12px;
   }
   .contact-part{
@@ -658,5 +658,11 @@
   .bigimg{
     width:80%!important;
     height:36%!important;
+  }
+  .product-le {
+    padding: 20px 0 0 0;
+  }
+  .product-le img{
+    width:100%
   }
 }
