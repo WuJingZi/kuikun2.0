@@ -437,6 +437,65 @@
     margin: 0 0 20px 0;
   }
 }
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+  .container {
+    max-width: 94%;
+  }
+  .about-qm .big-word p{
+    font-size: 48px;
+  }
+  .navbar-expand-lg .navbar-nav{
+    padding-left: 0;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link{
+    font-size: 14px;
+    padding: 0 10px;
+  }
+  .serve-list h2{
+    font-size: 16px;
+  }
+  .serve-list p{
+    font-size: 14px;
+  }
+  .direction-reveal__card h2{
+    font-size: 14px;
+  }
+  .idea-list h2{
+    font-size: 20px;
+  }
+  .idea-list p{
+    font-size: 14px;
+  }
+  .contact-part h2{
+    font-size: 20px;
+  }
+  .contact-part p{
+    font-size: 14px;
+  }
+  .about-qm-rg p {
+    color: #747474;
+    font-size: 14px;
+    margin-top: 25px;
+  }
+  .demo-le p{
+    font-size: 14px;
+  }
+  .demo-le a{
+    font-size: 14px;
+  }
+  .thinkings .think-con .think-img h2{
+    font-size: 15px;
+  }
+  .contact-part p.en {
+    padding-left: 43px;
+  }
+  .carousel .ban-intro .block{
+    font-size: 14px;
+  }
+  .about-word p{
+    font-size: 14px;
+  }
+}
 @media screen and (max-width: 1399px){
 
 }
